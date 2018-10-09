@@ -1,0 +1,25 @@
+---
+title: "Getting set up to learn git/GitHub"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* What tools do I need to partake in this workshop?
+* How can I install the tools I need for my platform?
+
+## Objectives
+* Get set up for learning git/GitHub and some command line.
+* Understand how to access the command line and git.
+
+## To Teach
+* git installation on Windows/Mac/Linux
+* Atom installation instructions on Windows/Mac/Linux
+* gitbash installation on Windows
+* How to create a GitHub account.
+ 

@@ -1,0 +1,27 @@
+---
+title: "Command Line Basics"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* What is the shell, command line, or terminal?
+* Why do I need to know the command line to use git?
+* How do I use the command line?
+* What commands do I need to know?
+
+## Objectives
+* Understand for to form file paths and navigate directories
+* Understand how arguments and flags are used to modify command line commands.
+* Understand the concept of wild cards '*'.
+
+## To Teach
+* ~, ., .., ./folder/file.ext
+* cd, ls, pwd, rm, mv, mkdir
+* ls -a
+* ls *.ext

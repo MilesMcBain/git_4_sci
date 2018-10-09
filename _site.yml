@@ -1,0 +1,13 @@
+name: "og"
+title: "Git for Researchers"
+description: |
+  Git for Researchers
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: radix::radix_article
+exclude: ["README.md"]

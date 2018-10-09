@@ -1,0 +1,27 @@
+---
+title: "Creating GitHub Repositories"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* How can I create a git repository on GitHub for my work?
+* How can I keep my work private if need be?
+* How can I get a copy of the repository I can modify on my computer?
+
+## Objectives
+* Understand options for creating a repository on GitHub. 
+* Understand how to clone a local copy repository from GitHub.
+
+## To Teach
+* Creating a repository using the GitHub GUI
+  - private vs public
+  - naming and description
+  - README
+* `git clone`
+ 
