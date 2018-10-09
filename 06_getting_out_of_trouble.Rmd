@@ -1,0 +1,25 @@
+---
+title: "Getting out of trouble"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* I messed up the commit message or files committed, how can I edit a commit?
+* I realised I introduced a problem, how can I revert a file to an earlier version?
+* Something is not right, how can I restore an earlier version of the whole repository?
+
+## Objectives
+* Understand the PC configuration required to use a git repository 
+
+## To Teach
+* git commit --amend
+* git checkout 123abc file.ext
+* git checkout 123abc
+* git checkout "@{4 days ago}"
+* git checkout -b

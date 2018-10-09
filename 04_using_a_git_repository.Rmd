@@ -1,0 +1,28 @@
+---
+title: "Using a git repository"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* How do I record changes to my files using git?
+* How do I view the status of the repository?
+* How do I syncronise the history with GitHub?
+
+## Objectives
+* Understand the PC configuration required to use a git repository 
+* Understand the conceptual areas: working tree, staging area
+* Understand the basic update workflow: add to staging, commit with message, push to origin
+
+## To Teach
+* git config --global user.name, user.email, core.editor
+* git status
+* git add, git add *.ext
+* git reset (to remove files from staging)
+* git commit, commit -m
+* git push

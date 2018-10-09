@@ -1,0 +1,24 @@
+---
+title: "Distributed workflow"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: radix::radix_website
+---
+
+# Overview
+**Teaching**: X min
+**Exercises**: X min
+
+## Questions
+* How do I bring down commits I pushed to GitHub at work to my home PC, or vice versa?
+* What happens when files on GitHub conflict with what I have committed locally? 
+
+## Objectives
+* Understand how to pull down commits pushed on another computer to my local copy.
+* Understand what a merge conflict is and how to resolve it using information provided by git.
+
+## To Teach
+* git pull
+* resolving merge conflicts
+* HEAD
+* git log / viewing history on GitHub
