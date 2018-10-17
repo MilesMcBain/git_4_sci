@@ -2,7 +2,6 @@
 title: "Creating a GitHub Repository"
 description: |
   Welcome to the website. I hope you enjoy it!
-site: radix::radix_website
 ---
 
 # Overview

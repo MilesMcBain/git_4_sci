@@ -4,10 +4,13 @@ description: |
   Git for Researchers
 output_dir: "_site"
 navbar:
+  left:
+    - text: "Prerequisites"
+      href: 00_prerequisites.html
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
 output: radix::radix_article
-exclude: ["README.md"]
+exclude: ["*.md"]

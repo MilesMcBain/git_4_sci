@@ -1,13 +1,10 @@
 ---
 title: "Getting set up to learn git/GitHub"
-description: |
-  Welcome to the website. I hope you enjoy it!
-site: radix::radix_website
+description: Welcome to the website. I hope you enjoy it!
 ---
 
 # Overview
-**Teaching**: X min
-**Exercises**: X min
+**Duration**: 20 min
 
 ## Questions
 * What tools do I need to partake in this workshop?
@@ -16,6 +13,106 @@ site: radix::radix_website
 ## Objectives
 * Get set up for learning git/GitHub and some command line.
 * Understand how to access the command line and git.
+
+# Software Setup
+
+These setup instructions are adapted from instructions that are copyright
+[Software Carpentry](http://software-carpentry.org/) and made available for
+re-use by them under the [CC BY 4.0
+license](https://creativecommons.org/licenses/by/4.0/legalcode).
+
+The task here is to get you setup with 3 main components:
+
+  * git - the version control software we will be studying
+  * Atom - a text editor with good integration with git/GitHub
+  * GitHub Account - access to the famed online git hosting service.
+
+## Git
+
+### Windows
+
+[Video Tutorial](https://www.youtube.com/watch?v=339AEqk9c-8)
+
+1. Download the [Git for Windows installer](https://git-for-windows.github.io/).
+1. Run the installer and follow the steps bellow:
+    1. Click on "Next".
+    1. Click on "Next".
+    1. Keep **"Use Git from the Windows Command Prompt" selected and click on "Next"**. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
+    1. Click on "Next".
+    1. **Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".**
+    1. **Keep "Use Windows' default console window" selected and click on "Next".**
+    1. Click on "Install".
+    1. Click on "Finish".
+1. If your "HOME" environment variable is not set (or you don't know what this is):
+    1. Open command prompt (Open Start Menu then type `cmd`  and press [Enter])
+    1. Type the following line into the command prompt window exactly as shown:
+
+    ``` 
+    setx HOME "%USERPROFILE%"
+    ```
+    1. Press [Enter], you should see SUCCESS: Specified value was saved.
+    1. Quit command prompt by typing exit then pressing [Enter]
+
+This will provide you with both Git and Bash in the Git Bash program.
+
+### MacOS
+
+#### Check you can access 'Terminal'
+The Terminal can be found in /Applications/Utilities or by searching spotlight for 'Terminal'. You may want to keep Terminal in your dock for this workshop.
+
+#### Git install option 1
+Open the terminal and type:
+
+  ```
+  $ git --version
+  ```
+  
+If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools. You may be asked for your administrator password.
+
+#### Git install option 2
+Download and run the installer from: https://git-scm.com/download/mac. Hit
+'Continue' through the prompts without modifying the installation destination or
+other settings. You may be asked for your administrator password.
+
+### Linux
+Check you have git installed by opening your terminal and running:
+
+  ```
+  $git --version
+  ```
+
+If git is missing install is using your package manager. E.g. by running
+
+  ```
+  sudo apt-get install git
+  ```
+
+In the terminal.
+
+## Atom text editor
+
+### Windows, MacOS, Linux
+
+1. Open https://atom.io/ in your browser. 
+1. Click the 'Download' button to download the Atom installer. 
+1. Once Downloaded, run the installer to install Atom.
+
+## GitHub
+
+### Windows, MacOS, Linux
+
+1. Open https://github.com in your browser
+1. Click 'Sign up for GitHub'
+1. Enter the required personal details for step 1.
+    * Note if you use a '.edu' email it will be slightly easier to get unlimited private repos for free with an educational discount. Although you can change this later.
+1. In step 2 select the free plan.
+1. In step 3 you have the option to fill out a survey or immediately hit submit.
+
+#### Optional: Register for educational discount
+1. Open https://education.github.com/ in your browser, log in to GitHub if prompted.
+1. Click 'Join GitHub Education'
+1. Select the category that describes you, most likely the category that describes you, most likely 'Researcher.'
+1. Fill in the rest of your details, you will need to supply an .edu email, and a brief description of your planned GitHub usage. You might say "To version and share research projects." 
 
 ## To Teach
 * git installation on Windows/Mac/Linux
