@@ -4,7 +4,11 @@ description: |
   Some additional details about the website
 ---
 
-```{r setup, include=FALSE}
+# About this
+
+
+
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 

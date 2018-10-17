@@ -1,14 +1,11 @@
 ---
 title: "Git for Researchers"
-description: |
-  Welcome to the website. I hope you enjoy it!
-output:
-  radix::radix_article:
-    toc: true
-site: radix::radix_website
+description: Welcome to the website. I hope you enjoy it!
+output: bookdown::gitbook
+site: bookdown::bookdown_site
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
 # Learn more about creating websites with Radix at:

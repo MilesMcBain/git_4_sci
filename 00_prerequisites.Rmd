@@ -3,7 +3,9 @@ title: "Getting set up to learn git/GitHub"
 description: Welcome to the website. I hope you enjoy it!
 ---
 
-# Overview
+# Getting set to git
+
+## Overview
 **Duration**: 20 min
 
 ## Questions
