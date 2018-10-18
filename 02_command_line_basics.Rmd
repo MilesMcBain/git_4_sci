@@ -154,6 +154,65 @@ Answer the following:
 
 ### Moving between folders
 
+The command `cd` **changes** the working **directory**. To use it type `cd`
+followed by an argument which is the path of the folder to change to. The path can be either
+'absolute' or 'relative'. For example, assuming the current working
+directory is the user's home (`/home/miles`), to change directory to their
+Downloads we could do either of these:
+
+```
+miles@miles-macbook:~$ cd Downloads
+miles@miles-macbook:~/Downloads$ 
+
+miles@miles-macbook:~$ cd /home/miles/Downloads
+miles@miles-macbook:~/Downloads$ 
+```
+
+Notice how the prompt has changed to reflect the new working directory. The `~` symbol is a shorthand for the user's home directory and we can use it to form paths.
+
+#### Changing Challenges
+1. You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the `~` in the path.
+1. Change to the root folder of the system and list its contents. Change to your home folder.
+
+### Pathing shortcuts
+Apart from `~` there are two other symbols with special meanings in paths:
+
+`.` is shorthand for 'the current working directory'. So this won't change anywhere:
+
+```
+miles@miles-macbook:~$ cd .
+``` 
+
+and these are equivalent:
+
+```
+miles@miles-macbook:~$ cd ./Downloads
+
+miles@miles-macbook:~$ cd Downloads
+```
+
+`..` is shorthand for 'the parent of the current working directory'. It can be
+used multiple times so, `cd ..` would move up one folder and `cd ../..` would
+move up two. It is useful for creating relative paths to other branches of a
+directory tree e.g.:
+
+```
+miles@miles-macbook:~$ cd ~
+miles@miles-macbook:~$ cd Downloads
+miles@miles-macbook:~/Downloads$ cd ../Documents
+miles@miles-macbook:~/Documents$ 
+```
+
+We moved 'sideways' to a folder at the same level.
+
+#### Do Dot Dot {.exercise}
+
+1. Where does the following command place you on your system? How does it work?
+
+```
+cd ~/../../..
+```
+
 ## Manipulating the Filesystem
 
 
