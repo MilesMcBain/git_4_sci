@@ -12,3 +12,4 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+css: styles.css

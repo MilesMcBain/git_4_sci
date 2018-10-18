@@ -1,24 +1,27 @@
 ---
 title: "Why Git/Github?"
-description: |
-  Welcome to the website. I hope you enjoy it!
+description: A discussion about git/GitHub.
+css: styles.css
 ---
 
-# Overview
-**Teaching**: X min
-**Exercises**: X min
+# Why Git/GitHub
 
-## Questions
+The idea here is to have a brief discussion about our motivations learning git
+and the benefits we anticipate.
+
+## Overview
+* **Teaching**: 2 min
+* **Exercises**: 5 min
+
+### Questions
 * What our motivations for learning git/GitHub?
 * What are the use cases for researchers to learn git/GitHub?
 
-## Objectives
+### Objectives
 * Understand the motivations of the group on attendance
 * Be able to describe the various use cases for git/GitHub and identify relevant ones.
 * Understand the difference between git and GitHub.
 
-## To Teach
-* Role in open science
-* Role as a personal version tracker
-* Role as a collaborative platform
-* Role as a distribution platform for research work.
+## Why are we here?  {.exercise}
+
+1. Form small groups of up to 4 with your neighbours and discuss how you expect learning git and GitHub to benefit you.

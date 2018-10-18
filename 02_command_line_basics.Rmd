@@ -1,27 +1,165 @@
 ---
 title: "Command Line Basics"
-description: |
-  Welcome to the website. I hope you enjoy it!
-site: radix::radix_website
+description: git is fundamentally a command line tool.
+css: styles.css
 ---
 
-# Overview
-**Teaching**: X min
-**Exercises**: X min
+# Command Line Basics
 
-## Questions
+In this session will introduce the command line as a general concept and learn a few commands that are complimentary to git. 
+
+## Overview
+* **Teaching**: X min
+* **Exercises**: X min
+
+### Questions
 * What is the shell, command line, or terminal?
 * Why do I need to know the command line to use git?
 * How do I use the command line?
 * What commands do I need to know?
 
-## Objectives
+### Objectives
 * Understand for to form file paths and navigate directories
 * Understand how arguments and flags are used to modify command line commands.
 * Understand the concept of wild cards '*'.
 
+## Introduction
+
+git is fundamentally a command line tool. Although there are many graphical user
+interfaces that can simplify its use, none contain the full set of features available on the command line.
+
+If you ever encounter trouble with a git repository, or need to find out how to
+do something important with it, you will invariably stumble across help in the
+form of command line instructions. This is why comfort with the command line is
+essential for learning git.
+
+## Shell, command line, cli, terminal
+
+All these words in the title above are used interchangeably to mean the same
+thing: a sparse window, usually with a dark backgroud and light text, featuring
+a prompt followed by a cursor. In the movies hacking computers often
+involves people typing really fast into this window.
+
+The command line interface (cli), is a text-based interface to a computer
+program. Pretty much everyone primarily uses a Graphical User Interface (GUI) to
+interact with their programs, but historically this is only recent. Most of the
+time we've had with computers has been using text-based interfaces and often the
+GUI can only access a subset of functionality available on the cli. There are
+many important programs that only have a cli (e.g. pandoc).
+
+'Terminal' is short for 'terminal emulator' which is to say it is a program
+which emulates a physical input and display device called a terminal, that used
+to connect to a mainframe computer in the early days of computing. It is the
+program that draws the dark background, light text, and cursor.
+
+A 'shell' is a program that provides a cli to your operating system. Think of
+the functionality your operating system provides: manipulating your file system,
+running and stopping programs, changing system settings etc. All of this can be
+done via text with a shell. When you 'open a terminal' the program that the
+terminal is talking to initially is a shell. For a given operating system you
+often have a choice of many shells. The most popular shell is the 'Bourne Again
+Shell' or 'bash'.
+
+## File system navigation
+
+### Listing files and folders
+
+We're jumping in! Windows users, run the `gitbash` program now. MacOS and Linux users open a fresh terminal.
+
+First lets consider what we can see. Usually your terminal will greet you with a prompt that looks like this:
+
+```
+miles@miles-macbook:~$
+```
+
+Followed by a cursor. Type the command `pwd`, for 'print working directory', and hit enter. This will show us the folder in your file system the shell is currently looking. It should return text to the terminal like so:
+
+```
+miles@miles-macbook:~$ pwd
+/home/miles
+miles@miles-macbook:~$
+```
+
+The output can be interpreted like so:
+
+```
+/ --            # Root of directory structure 
+   | 
+   home --      # Home folder
+        | 
+        miles  # user's individual home folder - working directory
+```
+
+Now here's a new command: `ls` will **list** the contents of the working directory. Run that command and you will see the contents of your home folder.
+
+But `ls` is much more versatile than this. We can use things called 'flags' and
+'arguments' to interface with `ls`'s additional features. For example we can
+list the contents of our Documents folder like so:
+
+```
+miles@miles-macbook:~$ ls Documents
+acp_3d-1.png  _cert.png  parchemnt_pix2.xcf
+rock_opera.png  the_log.txt  uluru.jpg
+miles@miles-macbook:~$ 
+```
+
+'Documents' is an **argument** to the `ls` command. We pass commands arguments by
+typing them after the command name.
+
+We can view hidden files using the flag `-a` for 'all'. Do that for the working directory like so:
+
+```
+miles@miles-macbook:~$ ls -a
+```
+
+Are there more hidden files and folders than you expected? What do you notice
+about their file names?
+
+Multiple flags can be combined after a single dash. We can instruct `ls`
+to 'list **all** in a **long** format, readable for **humans**' with:
+
+```
+miles@miles-macbook:~$ ls -alh
+total 428K
+drwxr-xr-x 36 miles miles 4.0K Oct 18 15:01 .
+drwxr-xr-x  3 root  root  4.0K Jul 30 21:14 ..
+-rw-------  1 miles miles  19K Oct 18 01:29 .bash_history
+-rw-r--r--  1 miles miles  220 Jul 30 21:14 .bash_logout
+-rw-r--r--  1 miles miles 3.6K Oct 17 21:37 .bashrc
+-rw-r--r--  1 miles miles  16K Oct 17 21:34 .bashrc.swp
+drwxr-xr-x  2 miles miles 4.0K Oct 16 19:49 bin
+drwxr-xr-x 12 miles miles 4.0K Oct 17 21:46 .cache
+drwxr-xr-x  4 miles miles 4.0K Aug 31 22:31 code
+drwx------ 23 miles miles 4.0K Oct 18 00:30 .config
+drwxr-xr-x  2 miles miles 4.0K Jul 30 21:16 Desktop
+
+```
+
+
+#### Combining arguments and flags {.exercise}
+
+In this exercise you will figure out how to use arguments and flags together. 
+
+1. Using the flags you've seen so far, experiment to determine determine what order the flags have to be in.
+2. Create a command that lists all the contents of your 'Documents' folder in long format. 
+
+#### One flag to rule them all {.exercise}
+
+Most commands can give you useage information about what kinds of flags and arguments they support if you call them with the flag `--help`, sometimes `-h` will work also.
+
+Answer the following:
+
+2. Obtain the usage information for `ls`. What is a flag that you can use to arrange the output in alphabetical order?
+1. By convention flags that are full words use a double dash `--` and flags are a single letter have a singe dash. Why must this be the case?
+
+### Moving between folders
+
+## Manipulating the Filesystem
+
+
+## Using Wildcards
+
 ## To Teach
 * ~, ., .., ./folder/file.ext
 * cd, ls, pwd, rm, mv, mkdir
-* ls -a
 * ls *.ext
