@@ -140,7 +140,7 @@ drwxr-xr-x  2 miles miles 4.0K Jul 30 21:16 Desktop
 
 In this exercise you will figure out how to use arguments and flags together. 
 
-1. Using the flags you've seen so far, experiment to determine determine what order the flags have to be in.
+1. Using the flags you've seen so far, experiment to determine what order the flags have to be in.
 2. Create a command that lists all the contents of your 'Documents' folder in long format. 
 
 #### One flag to rule them all {.exercise}
