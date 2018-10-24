@@ -215,8 +215,35 @@ cd ~/../../..
 
 ## Manipulating the Filesystem
 
+The shell provides commands to create, move, and delete folders and files. Let's create an example project folder from the command line:
+
+First we'll use the `mkdir` command to **make** a **directory**:
+
+```
+miles@miles-macbook:~$ mkdir eg_project
+```
+
+Confirm the project folder exists using `ls` and change into it with `cd`:
+
+
+```
+miles@miles-macbook:~$ ls
+miles@miles-macbook:~$ cd eg_project
+```
+
+Then we'll create several more folders as if the project is an analysis:
+
+```
+miles@miles-macbook:~$ mkdir doc
+miles@miles-macbook:~$ mkdir data
+miles@miles-macbook:~$ mkdir results
+miles@miles-macbook:~$ mkdir scripts
+```
+
+Using atom we'll create some empty files. 
 
 ## Using Wildcards
+
 
 ## To Teach
 * ~, ., .., ./folder/file.ext
