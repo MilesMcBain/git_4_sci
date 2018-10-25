@@ -1,9 +1,3 @@
----
-title: "Why Git/Github?"
-description: A discussion about git/GitHub.
-css: styles.css
----
-
 # Why Git/GitHub
 
 The idea here is to have a brief discussion about our motivations learning git

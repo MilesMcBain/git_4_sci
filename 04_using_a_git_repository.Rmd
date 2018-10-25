@@ -1,10 +1,4 @@
----
-title: "Using a git repository"
-description: |
-  Welcome to the website. I hope you enjoy it!
----
-
-# Overview
+# Using a git repository
 **Teaching**: X min
 **Exercises**: X min
 

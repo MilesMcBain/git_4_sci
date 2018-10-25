@@ -1,10 +1,4 @@
----
-title: "Getting out of trouble"
-description: |
-  Welcome to the website. I hope you enjoy it!
----
-
-# Overview
+# Getting out of trouble
 **Teaching**: X min
 **Exercises**: X min
 

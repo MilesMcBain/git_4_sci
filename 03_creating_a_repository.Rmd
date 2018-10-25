@@ -1,10 +1,5 @@
----
-title: "Creating a GitHub Repository"
-description: |
-  Welcome to the website. I hope you enjoy it!
----
+# Creating a GitHub Repository
 
-# Overview
 **Teaching**: X min
 **Exercises**: X min
 
@@ -17,10 +12,49 @@ description: |
 * Understand options for creating a repository on GitHub. 
 * Understand how to clone a local copy repository from GitHub.
 
+## Git vs GitHub
+
+Git is called a 'distributed version control system'. The contrast to this is a
+Centralised Version Constrol System (CVS) e.g. Google Docs. Git is distributed
+in the sense that although it can be used to syncronise changes to a repository,
+it does not require a 'single source of truth' to do that. File changes can be
+shared in networks of peers with any topology.
+
+Git was developed for the Linux Kernel project which has a structure reminiscent
+of a military. A supreme commander accepts code changes from a few trusted
+generals, who in turn accept code changes from a few trusted lieutenants and so
+on. This would not be possible with a centralised model.
+
+GitHub hosts git repositories, that act as central repositories that users
+synchronise with. But even this mode is more flexible than a traditional
+centralised approach. Users can use git locally to manage committed changes
+before 'pushing' them to GitHub. E.g. remove or amend commits.
+
+GitHub also introduces the concept of 'forking' whereby users can create a fork
+of another user's GitHub repository, sync changes with the fork, and eventually propose
+changes be pulled from the fork by the original repository. Forks can themselves
+be forked, which allows for a complex topologies within repositories hosted on
+GitHub.
+
+In summary git is the program that creates repositories and powers the version
+control, and git provides cloud hosting for git repositories with additional
+website features that facilitate collaboration.
+
+## Creating a hosted repository on GitHub
+
+There are a number of ways to set up a local repository that is syncronised with
+GitHub. In this lesson we will use the 'GitHub first' approach described by
+[@Bryan2018-le]. At a high level the workflow for this approach looks like:
+
+1. Create repository on https://www.github.com
+1. Clone the GitHub repository to your PC, making a 'local copy'.
+1. Commit changes to local copy and push to GitHub.
+
+### Creating a reposity on github.com
+
 ## To Teach
 * Creating a repository using the GitHub GUI
   - private vs public
   - naming and description
   - README
 * `git clone`
- 

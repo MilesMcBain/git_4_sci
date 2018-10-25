@@ -1,15 +1,10 @@
 ---
 title: "Git for Researchers"
-description: Welcome to the website. I hope you enjoy it!
-output: bookdown::gitbook
+author: Miles McBain
+description: A short course to get researchers up and running with git/GitHub
+documnetclass: book
 site: bookdown::bookdown_site
+bibliography: references.bibtex
+biblio-style: apalike
+link-citations: yes
 ---
-
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Radix at:
-# https://rstudio.github.io/radix/website.html
-
-```
-

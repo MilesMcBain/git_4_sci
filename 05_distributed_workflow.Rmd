@@ -1,10 +1,4 @@
----
-title: "Distributed workflow"
-description: |
-  Welcome to the website. I hope you enjoy it!
----
-
-# Overview
+# Distributed Workflow
 **Teaching**: X min
 **Exercises**: X min
 

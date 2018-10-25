@@ -1,10 +1,3 @@
----
-title: "Getting set to Git"
-description: Welcome to the website. I hope you enjoy it!
-author: Miles McBain
-date: "`r format(Sys.time(), '%d %B, %Y')`"
----
-
 # Getting set to Git
 
 ## Overview

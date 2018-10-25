@@ -1,9 +1,3 @@
----
-title: "Command Line Basics"
-description: git is fundamentally a command line tool.
-css: styles.css
----
-
 # Command Line Basics
 
 In this session will introduce the command line as a general concept and learn a few commands that are complimentary to git. 
@@ -194,7 +188,7 @@ Notice how the prompt has changed to reflect the new working directory. The `~`
 symbol is a shorthand for the user's home directory and we can use it to form
 paths.
 
-#### Changing Challenges
+#### Changing Challenges {.exercise}
 1. You should be in your Downloads folder. Change to your Documents folder in a
    single command incorporating the `~` in the path.
 1. Change to the root folder of the system and list its contents. Change to your
