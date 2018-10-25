@@ -35,16 +35,21 @@ The task here is to get you setup with 3 main components:
 
 [Video Tutorial](https://www.youtube.com/watch?v=339AEqk9c-8)
 
+The following instructions are for git for Windows 2.19.1 installer:
+
 1. Download the [Git for Windows installer](https://git-for-windows.github.io/).
 1. Run the installer and follow the steps bellow:
-    1. Click on "Next".
-    1. Click on "Next".
+    1. Click on "Next" to use the default install location.
+    1. Click on "Next" to use the default install components.
+    1. Click on "Next" to use the default Start Menu folder.
+    1. Click on "Next" to use the default editor, we will change it later.
     1. Keep **"Use Git from the Windows Command Prompt" selected and click on "Next"**. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
-    1. Click on "Next".
+    1. Click on "Next" to use OpenSSL library.
     1. **Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".**
     1. **Keep "Use Windows' default console window" selected and click on "Next".**
-    1. Click on "Install".
-    1. Click on "Finish".
+    1. **Keep "Enable file systen caching" and "Enable Git Credential Manager" selected and click on "Next".** 
+    1. Do not enable experimental updates. Click on "Install".
+    1. Uncheck "View Release Notes". Click on "Finish".
 1. If your "HOME" environment variable is not set (or you don't know what this is):
     1. Open command prompt (Open Start Menu then type `cmd`  and press [Enter])
     1. Type the following line into the command prompt window exactly as shown:
