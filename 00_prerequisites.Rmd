@@ -1,9 +1,11 @@
 ---
-title: "Getting set up to learn git/GitHub"
+title: "Getting set to Git"
 description: Welcome to the website. I hope you enjoy it!
+author: Miles McBain
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 ---
 
-# Getting set to git
+# Getting set to Git
 
 ## Overview
 **Duration**: 20 min
