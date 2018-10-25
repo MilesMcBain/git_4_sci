@@ -85,7 +85,7 @@ other settings. You may be asked for your administrator password.
 Check you have git installed by opening your terminal and running:
 
   ```
-  $git --version
+  $ git --version
   ```
 
 If git is missing install is using your package manager. E.g. by running
