@@ -64,15 +64,26 @@ Shell' or 'bash'.
 
 ### Listing files and folders
 
-We're jumping in! Windows users, run the `gitbash` program now. MacOS and Linux users open a fresh terminal.
+We're jumping in! Windows users, run the `gitbash` program now. MacOS and Linux
+users open a fresh terminal.
 
-First lets consider what we can see. Usually your terminal will greet you with a prompt that looks like this:
+First lets consider what we can see. Usually your terminal will greet you with a
+prompt that looks like this:
 
 ```
 miles@miles-macbook:~$
 ```
 
-Followed by a cursor. Type the command `pwd`, for 'print working directory', and hit enter. This will show us the folder in your file system the shell is currently looking. It should return text to the terminal like so:
+On Windows it will contain the same elements but look like this:
+
+```
+miles@miles-pc MINGW64 ~
+$
+```
+
+Followed by a cursor. Type the command `pwd`, for 'print working directory', and
+hit enter. This will show us the folder in your file system the shell is
+currently looking. It should return text to the terminal like so:
 
 ```
 miles@miles-macbook:~$ pwd
@@ -90,7 +101,8 @@ The output can be interpreted like so:
         miles  # user's individual home folder - working directory
 ```
 
-Now here's a new command: `ls` will **list** the contents of the working directory. Run that command and you will see the contents of your home folder.
+Now here's a new command: `ls` will **list** the contents of the working
+directory. Run that command and you will see the contents of your home folder.
 
 But `ls` is much more versatile than this. We can use things called 'flags' and
 'arguments' to interface with `ls`'s additional features. For example we can
@@ -103,10 +115,11 @@ rock_opera.png  the_log.txt  uluru.jpg
 miles@miles-macbook:~$ 
 ```
 
-'Documents' is an **argument** to the `ls` command. We pass commands arguments by
-typing them after the command name.
+'Documents' is an **argument** to the `ls` command. We pass commands arguments
+by typing them after the command name.
 
-We can view hidden files using the flag `-a` for 'all'. Do that for the working directory like so:
+We can view hidden files using the flag `-a` for 'all'. Do that for the working
+directory like so:
 
 ```
 miles@miles-macbook:~$ ls -a
@@ -138,27 +151,33 @@ drwxr-xr-x  2 miles miles 4.0K Jul 30 21:16 Desktop
 
 #### Combining arguments and flags {.exercise}
 
-In this exercise you will figure out how to use arguments and flags together. 
+In this exercise you will figure out how to use arguments and flags together.
 
-1. Using the flags you've seen so far, experiment to determine what order the flags have to be in.
-2. Create a command that lists all the contents of your 'Documents' folder in long format. 
+1. Using the flags you've seen so far, experiment to determine what order the
+   flags have to be in.
+2. Create a command that lists all the contents of your 'Documents' folder in
+   long format.
 
 #### One flag to rule them all {.exercise}
 
-Most commands can give you useage information about what kinds of flags and arguments they support if you call them with the flag `--help`, sometimes `-h` will work also.
+Most commands can give you useage information about what kinds of flags and
+arguments they support if you call them with the flag `--help`, sometimes `-h`
+will work also.
 
 Answer the following:
 
-2. Obtain the usage information for `ls`. What is a flag that you can use to arrange the output in alphabetical order?
-1. By convention flags that are full words use a double dash `--` and flags are a single letter have a singe dash. Why must this be the case?
+2. Obtain the usage information for `ls`. What is a flag that you can use to
+   arrange the output in alphabetical order?
+1. By convention flags that are full words use a double dash `--` and flags are
+   a single letter have a singe dash. Why must this be the case?
 
 ### Moving between folders
 
 The command `cd` **changes** the working **directory**. To use it type `cd`
-followed by an argument which is the path of the folder to change to. The path can be either
-'absolute' or 'relative'. For example, assuming the current working
-directory is the user's home (`/home/miles`), to change directory to their
-Downloads we could do either of these:
+followed by an argument which is the path of the folder to change to. The path
+can be either 'absolute' or 'relative'. For example, assuming the current
+working directory is the user's home (`/home/miles`), to change directory to
+their Downloads we could do either of these:
 
 ```
 miles@miles-macbook:~$ cd Downloads
@@ -168,16 +187,24 @@ miles@miles-macbook:~$ cd /home/miles/Downloads
 miles@miles-macbook:~/Downloads$ 
 ```
 
-Notice how the prompt has changed to reflect the new working directory. The `~` symbol is a shorthand for the user's home directory and we can use it to form paths.
+A path that starts with `/` is assumed to be absolute. Paths that do not are
+assumed to be relative to the current working directory.
+
+Notice how the prompt has changed to reflect the new working directory. The `~`
+symbol is a shorthand for the user's home directory and we can use it to form
+paths.
 
 #### Changing Challenges
-1. You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the `~` in the path.
-1. Change to the root folder of the system and list its contents. Change to your home folder.
+1. You should be in your Downloads folder. Change to your Documents folder in a
+   single command incorporating the `~` in the path.
+1. Change to the root folder of the system and list its contents. Change to your
+   home folder.
 
 ### Pathing shortcuts
 Apart from `~` there are two other symbols with special meanings in paths:
 
-`.` is shorthand for 'the current working directory'. So this won't change anywhere:
+`.` is shorthand for 'the current working directory'. So this won't change
+anywhere:
 
 ```
 miles@miles-macbook:~$ cd .
@@ -215,9 +242,15 @@ cd ~/../../..
 
 ## Manipulating the Filesystem
 
-The shell provides commands to create, move, and delete folders and files. Let's create an example project folder from the command line:
+The shell provides commands to create, move, and delete folders and files. 
 
-First we'll use the `mkdir` command to **make** a **directory**:
+### Creating Folders
+Let' create an example project folder from the command line:
+
+First we'll use the `mkdir` command to **make** a **directory**. The argument to
+the command is the path of the directory to be created. To create a
+directory in the current folder we just need to use its name since and the path
+is assumed to be relative.
 
 ```
 miles@miles-macbook:~$ mkdir eg_project
@@ -231,21 +264,99 @@ miles@miles-macbook:~$ ls
 miles@miles-macbook:~$ cd eg_project
 ```
 
-Then we'll create several more folders as if the project is an analysis:
+Then we'll create several more folders as if the project is an analysis, `mkdir`
+can create multiple directories at once, for each argument passed.
 
 ```
-miles@miles-macbook:~$ mkdir doc
-miles@miles-macbook:~$ mkdir data
-miles@miles-macbook:~$ mkdir results
-miles@miles-macbook:~$ mkdir scripts
+mkdir doc data results scripts
 ```
 
-Using atom we'll create some empty files. 
+### Moving Folders/Files
 
-## Using Wildcards
+Using and Atom we'll create some empty files. To open our project use **File**
+-> **Open Folder...** and select the 'eg_project' folder.
 
+Create the 4 files in the `eg_project` folder as shown:
 
-## To Teach
-* ~, ., .., ./folder/file.ext
-* cd, ls, pwd, rm, mv, mkdir
-* ls *.ext
+They don't need to contain anything. 
+
+Let's say we want to move the .Rmd file to the scripts folder. We can use the `mv` command to **move** files or folders. `mv` takes two arguments, the first being files or folders to move and
+the second being the path to move then to. Our command would look like:
+
+```
+miles@pa00120549:~/eg_project$ mv paper.rmd scripts
+```
+
+Let's say we don't like the name 'scripts' since 'paper.Rmd' is not really a
+script - it's a source file. We can also use `mv` to rename files and folders, by
+moving them to a new place in the file system e.g.:
+
+```
+miles@pa00120549:~/eg_project$ mv scripts src
+```
+
+#### Rename a file {.exercise}
+
+Complete the command below to rename the 'paper.Rmd' file to 'methods.Rmd' using `mv`:
+
+```
+miles@pa00120549:~/eg_project$ mv src/paper.Rmd ...
+```
+
+Be sure to check your result using `ls`.
+
+### Wildcards and Manipulations
+
+Now we're going to see how we can use wildcards to perform actions on many
+files or folders at once. A wildcard is the the `*` symbol, and it can be used to provide file system arguments that match patterns. 
+
+For example, lets say we want to list all the data files in the current folder:
+
+```
+miles@pa00120549:~/eg_project$ ls -alh *csv
+```
+
+This lists all files that end in 'csv'. We could also use it a the end of a path
+to match all items that start with a prefix, e.g. also folders starting with 'd':
+
+```
+miles@pa00120549:~/eg_project$ ls -alh d*
+```
+
+We can use this with all types of file manipulations!
+
+#### Move a group {.exercise}
+1. Using a single `mv` command, move the csv files with 'table' in the name to the 'data' folder.
+
+### File Removal
+
+The `rm` command can be used to remove files and folders. It takes the path of
+the files or folders as its argument. It requires the `-r` (**recursive**) flag
+to remove folders.
+
+To remove the 'doc' folder we'd do:
+
+```
+miles@pa00120549:~/eg_project$ rm -r doc
+```
+
+#### Wildcard extermination {.exercise}
+
+1. Combine the `rm` command with two wildcards to remove all .csv files in our
+   project with a single command.
+
+*Hint* You can use a wildcard in the path for both the folder and file name portion.
+
+## Summary
+In this lesson we've:
+
+* Demystified some of the jargon associated with the command line.
+* Learned the anatomy of cli commands: paths, arguments, and flags.
+* Learned about relative and absolute paths, including useful short hands (`~`, `..`, `.`)
+* Seen wildcards in action.
+* Learned a handful of shell commands.
+
+This is but a tiny fraction of what is available using the shell. The main
+objective here was to communicate some ideas that come in handy with git. You
+might like to see: http://swcarpentry.github.io/shell-novice/ for a more
+complete introduction.`
