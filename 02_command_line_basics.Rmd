@@ -341,7 +341,7 @@ miles@pa00120549:~/eg_project$ rm -r doc
 1. Combine the `rm` command with two wildcards to remove all .csv files in our
    project with a single command.
 
-*Hint* You can use a wildcard in the path for both the folder and file name portion.
+*Hint:* You can use a wildcard in the path for both the folder and file name portion.
 
 ## Summary
 In this lesson we've:
