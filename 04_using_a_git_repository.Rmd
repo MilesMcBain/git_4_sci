@@ -188,7 +188,7 @@ relative to the local repository history and remote repository.
 
 It can be run with no additional arguments or flags. It will search upward from
 the current working directory until it find a git repository or fails. If we run
-it from within our freshly clone repository we get:
+it from within our freshly cloned repository we get:
 
 ```
 $ git status
@@ -308,7 +308,7 @@ We will just consider the basic usage for resetting staging in this section. The
 $ git reset <path>
 ```
 
-To remove files or folders on the path specified by the `<path>` argument.
+To unstage files or folders on the path specified by the `<path>` argument.
 Unstaging everything at once is also an option by omitting `<path>`:
 
 ```
