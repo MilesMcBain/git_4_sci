@@ -87,9 +87,7 @@ $ git config --help
 ```
 
 Help for a specific command will open up a help browser in the terminal, you can
-scroll with the arrow key or by paging, and quit with 'q'.
-
-#### Escape from 
+scroll with the arrow keys or by paging, and quit with 'q'.
 
 ## Cloning a repository
 
