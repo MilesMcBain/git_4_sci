@@ -150,7 +150,7 @@ longer work with git.
 
 ## Local repository workflow
 
-At a high level the workflow for working with your repository is:
+At a high level the workflow for your repository is:
 
 1. Create, update, or delete local files.
 1. Move changes to the staging area.
@@ -185,7 +185,7 @@ The `status` command gives us useful information about the status of our work
 relative to the local repository history and remote repository.
 
 It can be run with no additional arguments or flags. It will search upward from
-the current working directory until it find a git repository or fails. If we run
+the current working directory until it finds a git repository or fails. If we run
 it from within our freshly cloned repository we get:
 
 ```
@@ -217,7 +217,7 @@ following:
 1. Create a new folder called 'data' in our repository with `mkdir`
 2. Create a new file in the repository called 'analysis.Rmd' with Atom
 2. Create a new file in the repository called 'data.csv' with Atom.
-3. Add the following text on a new line in README.md: "Just gitting going!"
+3. Add the following text on a new line in README.md: "Just gitting started!"
 
 This is what Atom should look like when we're done:
 
@@ -264,7 +264,7 @@ $ git add <pathspec>
 
 Where the `<pathspec>` argument is a path to file or folder. In the case of a
 folder, all files in the folder will be added to staging. Paths can be formed
-using wildcards, '*', and short-hands e.g. '.' - This comes in quite handy for
+using wildcards, `*`, and short-hands e.g. `.` - This comes in quite handy for
 staging groups of files.
 
 `add` can be used to add stage an existing file the repository knows about or an
@@ -273,7 +273,7 @@ same.
 
 ### Stage all files in a single command {.exercise}
 
-1. Using a single `git add` command add stage 'analysis.Rmd', 'README.md', and 'data.csv'.
+1. Using a single `git add` command to stage 'analysis.Rmd', 'README.md', and 'data.csv'.
 
 *Hint:* `git add --help` might have something useful to say regarding the
 `<pathspec>` argument.
