@@ -272,6 +272,8 @@ Using and Atom we'll create some empty files. To open our project use **File**
 
 Create the 4 files in the `eg_project` folder as shown:
 
+![](figs/atom_folders.png)
+
 They don't need to contain anything. 
 
 Let's say we want to move the .Rmd file to the scripts folder. We can use the `mv` command to **move** files or folders. `mv` takes two arguments, the first being files or folders to move and

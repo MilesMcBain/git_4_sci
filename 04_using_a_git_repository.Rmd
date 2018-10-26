@@ -1,21 +1,192 @@
 # Using a git repository
+
 **Teaching**: X min
 **Exercises**: X min
 
 ## Questions
+* How do I get a local copy of my repository?
 * How do I record changes to my files using git?
 * How do I view the status of the repository?
 * How do I syncronise the history with GitHub?
 
 ## Objectives
 * Understand the PC configuration required to use a git repository 
+* Understand how to create a local copy of a GitHub repository.
 * Understand the conceptual areas: working tree, staging area
 * Understand the basic update workflow: add to staging, commit with message, push to origin
 
+## Local git configuration
+Before we can use git we need to give it some personal information. Every committed change to a repository requires the author's name and email as metadata. We register this information using the git cli.
+
+### Configure your git user information {.exercise}
+1. Open your terminal, or gitbash or Windows.
+1. Use these commands to register your name and email address, making sure it's the same email address you registered with GitHub:
+
+```
+$ git config --global user.email your.email@example.com
+$ git config --global user.name "Firstname Lastname"
+```
+
+You can check the value of this configuration by running the same command with no value argument:
+
+e.g.
+
+```
+$ git config --global user.email
+```
+
+## Anatomy of git cli commands
+
+All git commands we will learn share elements with those you have just seen.
+They will all begin with `git` followed immediately by an argument that defines
+the type of command you would like git to perform. In the above example the
+command is `config`. Flags, both `-` and `--` types are used to alter the way
+the command is performed. Finally there are additional arguments that are
+required to perform the command.
+
+In the example above the first argument is the configuration key, and the second
+argument is the value it should take. The `--global` flag makes the
+configuration global, so it will apply to all repositories. Without `--global`
+the configuration applies to only the repository in the current working
+directory (In our case there is no such repository).
+
+In summary, the form is:
+
+```
+$ git <command> <command flags> <command arguments>
+```
+
+## Cloning a repository
+
+Cloning is the process of creating a local copy of a remote repository, like one
+hosted on GitHub. Before we clone a respository, think about where you will
+clone it to. You might like to create yourself a `repos` folder in your home
+folder. 
+
+To clone a repository use the `clone` command followed by 2 arguments:
+
+```
+$ git clone <repository URL> <parent folder>
+```
+
+The parent folder is the folder that will contain your repository contents. The
+folder must be empty or the command will abort. If you leave the parent folder
+blank, the default behaviour is to create a folder for the repository in the
+current working directory with the same name as the repository. This is helpful
+and common usage.
+
+### Create a repos folder (optional) {.exercise}
+1. Use the `mkdir` command to create a folder called 'repos' in your home folder (`~`)
+
+### Clone your repository {.exercise}
+In your browser:
+  1. navigate to your 'git_workshop' repository on GitHub
+  1. Click the green 'Clone or Download' button on the right of screen.
+  1. Use the clipboard icon to copy your repository's URL.
+
+In your terminal:
+  1. Change to the folder that will house your repositories with `cd`.
+  1. Use this command to clone your respository, with your URL pasted in for '<URL>':
+  ```
+  $ git clone <URL>
+  ```
+  1. Enter your GitHub password when prompted and press enter.
+
+Here is some sample output:
+
+```
+miles@miles-macbook:~/repos$ git clone https://www.github.com/milesmcbain/git_workshop.git
+Cloning into 'git_workshop'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+```
+
+### What makes a git repository?
+
+If you `cd` into your repository folder and run the `ls -a` command you will see
+a hidden folder called '.git'. Have a look at its contents if you like. This is
+where git stores all the metadata it needs to operate your repository, including
+the complete history of every file ever added.
+
+Be careful not to delete or rename the '.git' folder or your repository will no
+longer work with git.
+
+## Local repository workflow
+
+At a high level the workflow for working with your repository is:
+1. Create, update, or delete local files.
+1. Move changes to the staging area.
+1. Commit changes in the staging area to the repository history.
+1. Push commits to the upstream remote.
+
+There's a bit of specific terminology here we can break down:
+
+You make changes to files in the repository as you normally would with any file
+on your computer. Those changes are saved on your computer but they are not
+recorded in your repository until they are **committed**. A **commit** is a
+record of related (usually) changes with associated metadata about like author,
+time, date, and reason for change. 
+
+A commit is not a snapshot. It is a delta. Only what changed is recorded.
+Therefore a single commit is not enough to recover a repository. You need all
+commits in order. You can think of a repository as a timeline of commits. This
+timeline is commonly referred to as the **history**.
+
+The **staging area** is a conceptual area where you can place changes you plan
+to commit imminently. You might have made many changes for varying reasons, so
+it makes sense to group them into commits related to the reason. You place files
+to be committed together in the staging area which feeds into your next commit.
+
+As you make commits, your local repository moves ahead of the remote repository
+(GitHub). You **push** your new commits to the remote to bring its history up to the
+present state of your local repository.
+
+## Determining when things have changed
+
+The `status` command gives us useful information about the status of our work
+relative to the local repository history and remote repository.
+
+If we run it on our freshly clone repository we get:
+
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+```
+
+Which tells us: 
+  * our local branch
+  * our repository status with respect to our remote branch history
+  * if we have uncommitted changes in the repository.
+
+
+You can think of branches as parallel timelines in your repository history.
+We'll discuss these later, time permitting, but for now all you need to know is
+that when you create and clone a repository from GitHub its history contains
+only one timeline: a **branch** called **master**.
+
+Now we'll introduce some changes and see how the status changes. Let's do the
+following:
+1. Create a new folder called 'data' in our repository with `mkdir`
+2. Create a new file in the root of our repository called analysis.Rmd with Atom
+3. Add the following text on a new line in README.md: "Just gitting going!"
+
+This is what Atom should look like when we're done:
+
+![](figs/atom_changes.png)
+
 ## To Teach
+* `git clone`
 * git config --global user.name, user.email, core.editor
 * git status
 * git add, git add *.ext
 * git reset (to remove files from staging)
 * git commit, commit -m
 * git push
+
+```{r}
+
+```
