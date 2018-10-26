@@ -37,7 +37,7 @@ be forked, which allows for a complex topologies within repositories hosted on
 GitHub.
 
 In summary git is the program that creates repositories and powers the version
-control, and git provides cloud hosting for git repositories with additional
+control, and GitHub provides cloud hosting for git repositories with additional
 website features that facilitate collaboration.
 
 ## Creating a hosted repository on GitHub
