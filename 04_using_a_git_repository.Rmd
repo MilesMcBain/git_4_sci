@@ -284,7 +284,7 @@ same.
 
 There are some considerations when staging files:
 
-* Once a file is committed it is very hard to remove from the history.
+* Once a file is committed it is hard to remove from the history.
   * Beware committing sensitive information like security tokens.
 * Git works best with files that are 'human readable', i.e. source files.
   * binary files or media files cannot be 'diffed' to work out delta.
