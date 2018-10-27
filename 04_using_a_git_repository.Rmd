@@ -121,7 +121,7 @@ In your browser:
 In your terminal:
 
 1. Change to the folder that will house your repositories with `cd`.
-  1. Use this command to clone your respository, with your URL pasted in for '<URL>':
+  1. Use this command to clone your repository, with your URL pasted in for '<URL>':
   ```
   $ git clone <URL>
   ```
@@ -479,6 +479,7 @@ To https://www.github.com/milesmcbain/git_workshop.git
 1. Was this tricky? Discuss with your neighbours what made it complicated.
 
 ## Summary
+
 You learned the git commands to support a solo workflow:
 
 * git clone
