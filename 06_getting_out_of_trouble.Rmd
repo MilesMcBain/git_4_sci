@@ -1,4 +1,5 @@
 # Getting out of trouble
+
 **Teaching**: X min
 **Exercises**: X min
 
@@ -8,9 +9,20 @@
 * Something is not right, how can I restore an earlier version of the whole repository?
 
 ## Objectives
-* Understand the PC configuration required to use a git repository 
+* Understand how to solve some common problems in arising in git.
+
+## Helping yourself with git
+
+## Fixing a previous commit
+
+## Restoring a file to an earlier version
+
+## Restoring the entire repository to an earlier version
+
+
 
 ## To Teach
+* git log
 * git commit --amend
 * git checkout 123abc file.ext
 * git checkout 123abc

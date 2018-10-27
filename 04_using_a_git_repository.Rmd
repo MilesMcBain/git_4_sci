@@ -372,6 +372,7 @@ To complete the commit you must:
 1. Write short informative commit message on the first line
   * e.g. "added analysis source and dataset"
   * You can continue with detailed info on line 3 - line n as needed.
+  * some good guidelines are [here](https://code.likeagirl.io/useful-tips-for-writing-better-git-commit-messages-808770609503)
 1. Save the file
 1. Close the file
 
