@@ -331,13 +331,160 @@ don't want to keep anything before you do this!
 
 ## Commit - recording staged changes
 
+Git `commit` is how you record staged changes in your history. The main activity
+involved in making a commit is writing the **commit message** which explains the
+changes.
+
+The basic syntax is simple:
+
+```
+$ git commit
+```
+
+Like `add` you can run this with your working directory set to any child folder
+of a git repository. The command will trigger a new window to open in Atom with
+this text:
+
+```
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   README.md
+#       new file:   analysis.Rmd
+#       new file:   data/data.csv
+#
+```
+### Aborting a commit
+
+The information provided summarises the current branch and the changes to be
+committed. This is a good opportunity to sanity check this information before
+making history. If you spot something fishy, close the file without adding a
+message and the commit will be aborted.
+
+### Completing a commit
+
+To complete the commit you must:
+
+1. Write short informative commit message on the first line
+  * e.g. "added analysis source and dataset"
+  * You can continue with detailed info on line 3 - line n as needed.
+1. Save the file
+1. Close the file
+
+After you close the file git will return some output to your terminal:
+
+```
+$ git commit 
+[master c6766f1] added analysis source and dataset
+ 3 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 analysis.Rmd
+ create mode 100644 data/data.csv
+```
+
+`[master c6766f1]` tells us a commit with a hash matching `c6766f1` was added to
+our master branch. Your hash will be different as they are intended to uniquely
+identify the commit. The hashes come in useful when we need to recover past
+versions.
+
+### Common usage: git commit -m "message"
+
+It is possible to complete a commit without editing a file in a text editor. The `-m` flag can be followed with a quoted string which will be used as the commit message, like:
+
+```
+$ git commit -m "a short commit message"
+```
+
+There are two drawbacks with this approach: 
+
+1. You do not get the final opportunity to see what is staged and what branch
+   you are on which can be helpful in avoiding mistakes.
+1. You are discouraged from writing detailed commit messages since typing into
+   the terminal on a single line is cumbersome.
+   
+It can be faster though so it might be great for your pattern of use.
+
+### Post commit status
+
+Finally let's check the status of the repository:
+
+```
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+```
+
+As we add commits to our local repository it moves ahead of the remote
+repository. Git is suggesting that we probably want to push our commits to
+GitHub ('origin/master'), and indeed that is the next step.
+
+
 ## Push - sending commits to GitHub
 
-## To Teach
-* `git clone`
+Most common usage of the push command is:
+
+```
+$ git push
+```
+
+With a working directory that is a child of a git repository. 
+
+This will cause all our new local commits to be sent to all configured remote
+repositories. In the case of our repository, it came configured with a single
+remote, GitHub, when we cloned it.
+
+As we have discussed, git supports complex decentralised topologies including
+having multiple remotes. As an example it would be possible to push our commits
+to remote repositories hosted on GitHub and GitLab simultaneously.
+
+The `push` command has flags and arguments that support these kinds of scenarios
+but you will likely never use them.
+
+If we push our current commit we see:
+
+```
+$ git push 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 419 bytes | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://www.github.com/milesmcbain/git_workshop.git
+   fef3706..ead4b25  master -> master
+
+```
+
+### GitHub history {.exercise}
+
+1. In your browser, navigate to your repository on GitHub.
+  * You can go straight to `https://www.github.com/YOURUSER/git_workshop`,
+    replacing `YOURUSER` appropriately.
+1. On your repository page, in the upper left of screen there is a circular
+   arrow clock icon with a 'commits' label. Click it to see your repository history.
+1. In the history view, click the commit hash on the right of screen to see the
+   delta for that commit
+
+### Your turn: renaming a file {.exercise}
+1. In your 'git_workshop' repository Rename 'analysis.Rmd' to '00_analysis.Rmd'.
+1. Run `git status`.
+1. Stage all the changes.
+1. Commit the changes with an informative message.
+1. Push the changes to GitHub and verify the remote repository looks as you expect.
+1. Was this tricky? Discuss with your neighbours what made it complicated.
+
+## Summary
+You learned the git commands to support a solo workflow:
+
+* git clone
 * git config --global user.name, user.email, core.editor
 * git status
-* git add, git add *.ext
+* git add, git add *
 * git reset (to remove files from staging)
 * git commit, commit -m
 * git push
