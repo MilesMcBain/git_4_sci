@@ -119,6 +119,3 @@ immediately. Empty repositories cannot be cloned.
   - naming
   - README
 
-```{r}
-
-```

@@ -1,0 +1,12 @@
+# Learning More
+
+The objective of this workshop/course was to get you comfortable enough with the
+command line and git to start using it immediately for your own solo projects.
+
+If you want to learn about using GitHub collaboratively, you might like to check
+out: 
+
+* This paper about how scientists can collaborate using git, which itself was
+written collaboratively using git on GitHub: https://github.com/karthik/smb_git
+* This chapter of Hadley Wickham's book on making R packages:
+  http://r-pkgs.had.co.nz/git.html
