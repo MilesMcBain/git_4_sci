@@ -1,7 +1,7 @@
 # Using a git repository
 
-**Teaching**: X min
-**Exercises**: X min
+**Teaching**: 40 min
+**Exercises**: 20 min
 
 ## Questions
 * How do I get a local copy of my repository?

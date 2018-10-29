@@ -1,7 +1,7 @@
 # Distributed Workflow
 
-* **Teaching**: X min
-* **Exercises**: X min
+* **Teaching**: 35 min
+* **Exercises**: 10 min
 
 ## Questions
 * How do I bring down commits I pushed to GitHub at work to my home PC, or vice versa?

@@ -3,8 +3,8 @@
 In this session will introduce the command line as a general concept and learn a few commands that are complimentary to git. 
 
 ## Overview
-* **Teaching**: X min
-* **Exercises**: X min
+* **Teaching**: 30 min
+* **Exercises**: 15 min
 
 ### Questions
 * What is the shell, command line, or terminal?

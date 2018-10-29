@@ -1,7 +1,7 @@
 # Getting out of trouble
 
-**Teaching**: X min
-**Exercises**: X min
+**Teaching**:  15 min
+**Exercises**: 10 min
 
 ## Questions
 * I messed up the commit message or files committed, how can I edit a commit?

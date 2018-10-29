@@ -1,7 +1,7 @@
 # Creating a GitHub Repository
 
-**Teaching**: X min
-**Exercises**: X min
+**Teaching**: 5 min
+**Exercises**: 5 min
 
 ## Questions
 * How can I create a git repository on GitHub for my work?
