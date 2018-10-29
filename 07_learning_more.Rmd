@@ -10,3 +10,4 @@ out:
 written collaboratively using git on GitHub: https://github.com/karthik/smb_git
 * This chapter of Hadley Wickham's book on making R packages:
   http://r-pkgs.had.co.nz/git.html
+* this paper which gives a quick introduction on git for scientists: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668

@@ -485,6 +485,11 @@ To https://www.github.com/milesmcbain/git_workshop.git
 
 ```
 
+**Note***:  You will be asked for your GitHub username as password at this point. 
+
+* MacOS and Linux users, type them into the terminal prompts. 
+* Windows users, a popup will appear - Enter your details and click 'Login' 
+
 ### GitHub history {.exercise}
 
 1. In your browser, navigate to your repository on GitHub.
