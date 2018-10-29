@@ -1,5 +1,5 @@
 ---
-title: "Git for Researchers"
+title: "Git for Scientists"
 author: Miles McBain
 description: A short course to get researchers up and running with git/GitHub
 documnetclass: book
