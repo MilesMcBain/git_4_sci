@@ -122,8 +122,13 @@ miles@miles-macbook:~$ ls -a
 Are there more hidden files and folders than you expected? What do you notice
 about their file names?
 
-Multiple flags can be combined after a single dash. We can instruct `ls`
-to 'list **all** in a **long** format, readable for **humans**' with:
+A flag distinct from an argument in that a flag is a constant not a variable. If
+a flag is present it 'switches on' certain behaviour. There are two forms:
+'--word' and '-a'.
+
+Multiple single letter flags can be combined after a single dash. We can
+instruct `ls` to 'list **all** in a **long** format, readable for **humans**'
+with:
 
 ```
 miles@miles-macbook:~$ ls -alh
@@ -267,7 +272,7 @@ mkdir doc data results scripts
 
 ### Moving Folders/Files
 
-Using and Atom we'll create some empty files. To open our project use **File**
+Using Atom we'll create some empty files. To open our project use **File**
 -> **Open Folder...** and select the 'eg_project' folder.
 
 Create the 4 files in the `eg_project` folder as shown:
@@ -326,7 +331,7 @@ We can use this with all types of file manipulations!
 
 ### File Removal
 
-The `rm` command can be used to remove files and folders. It takes the path of
+The `rm` command can be used to **remove** files and folders. It takes the path of
 the files or folders as its argument. It requires the `-r` (**recursive**) flag
 to remove folders.
 

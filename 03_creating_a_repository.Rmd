@@ -59,7 +59,7 @@ repository shall be called, and whether it shall be public or private.
 As suggested by GitHub, the name should be short and memorable. However, you
 want to balance this with searchable as your repository count grows. For example
 when creating repositories associated with an event or group you might include a
-reference it in the name eg. 'ABS_ML_workshop'. You get to 'pin' 6 repositories
+reference to it in the name eg. 'ABS_ML_workshop'. You get to 'pin' 6 repositories
 to your profile page ensuring they will always be easy to find.
 
 #### On public vs private
@@ -118,3 +118,7 @@ immediately. Empty repositories cannot be cloned.
   - private vs public
   - naming
   - README
+
+```{r}
+
+```

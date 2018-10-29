@@ -4,3 +4,5 @@ bookdown::gitbook:
     toc:
       collapse: section
       scroll_highlight: yes
+bookdown::html_book:
+  split_by: chapter

@@ -42,6 +42,8 @@ The text editor you configure here is the one git will open so you can write
 messages that explain your changes. Ideally it is an editor that
 opens really fast or one you always have open. 
 
+#### Set up Atom {.exercise}
+
 The default editor, Vim, is often found to be difficult to use by beginners and is
 the subject of [numerous memes](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/). In this course we will use Atom, which we
 will have open most of the time. You can change this at a later stage.
@@ -205,9 +207,9 @@ Which tells us:
 ### Aside: branches
 
 You can think of branches as parallel timelines in your repository history.
-We'll discuss these later, time permitting, but for now all you need to know is
-that when you create and clone a repository from GitHub its history contains
-only one timeline: a **branch** called **master**.
+Branches become necessary as the size of the team and project grows. For this
+lesson all you need to know is that when you create and clone a repository from
+GitHub its history contains only one timeline: a **branch** called **master**.
 
 ### Introducing changes
 
@@ -253,6 +255,27 @@ Some things of note:
 * git has detected a new untracked files: analysis.Rmd, data.csv.
 * git has **not** detected our new folder: 'data'. Git tracks changes to files only.
 
+## Diff - seeing what's changed
+
+We can ask git to show us exactly what has changed in any file or all files
+using the `git diff` command. It will compare **differences** in files  with the last
+committed versions. Colour coded output describing differences appears in the
+terminal.
+
+The syntax is:
+
+```
+git diff <path> <flags>
+```
+
+If `<path>` is omitted all files are 'diffed' (this is the lingo). A useful flag is `--colour-words` which will show individual word changes in context, rather than changed lines (the default).
+
+To diff `README.md` we would do:
+
+```
+git diff README.md
+```
+
 ## Add - moving changes to staging
 
 The `add` command moves changed files to the staging area in preparation for a
@@ -267,8 +290,8 @@ folder, all files in the folder will be added to staging. Paths can be formed
 using wildcards, `*`, and short-hands e.g. `.` - This comes in quite handy for
 staging groups of files.
 
-`add` can be used to add stage an existing file the repository knows about or an
-entirely new file like 'analysis.Rmd' in the previous section. The syntax is the
+`add` can be used to add stage an existing (tracked) file the repository knows about or an
+entirely new file (untracked) like 'analysis.Rmd' in the previous section. The syntax is the
 same.
 
 ### Stage all files in a single command {.exercise}
@@ -306,6 +329,7 @@ We will just consider the basic usage for resetting staging in this section. The
 $ git reset <path>
 ```
 
+  * Beware committing sensitive information like security tokens.
 To unstage files or folders on the path specified by the `<path>` argument.
 Unstaging everything at once is also an option by omitting `<path>`:
 
@@ -464,7 +488,7 @@ To https://www.github.com/milesmcbain/git_workshop.git
 ### GitHub history {.exercise}
 
 1. In your browser, navigate to your repository on GitHub.
-  * You can go straight to `https://www.github.com/YOURUSER/git_workshop`,
+  - You can go straight to `https://www.github.com/YOURUSER/git_workshop`,
     replacing `YOURUSER` appropriately.
 1. On your repository page, in the upper left of screen there is a circular
    arrow clock icon with a 'commits' label. Click it to see your repository history.

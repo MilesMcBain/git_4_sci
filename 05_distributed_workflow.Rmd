@@ -30,7 +30,7 @@ your repository on your current computer.
 1. In your browser, get the url for your repository.
 1. In you terminal, use the `git clone` command to clone your repository to a
    new folder with the name 'other_git_workshop'
-  * The form of the command will be `git clone <URL> <Path to folder>`
+  - The form of the command will be `git clone <URL> <Path to folder>`
 1. Use `ls` to check everything looks correct.
 
 Note: You didn't clone one repository inside the other DID you? Use `mv` to fix.
@@ -38,6 +38,7 @@ Note: You didn't clone one repository inside the other DID you? Use `mv` to fix.
 #### Outcome
 
 To be clear you should now have 2 local copies:
+
   * 'git_workshop' - the one we initially cloned in a previous lesson.
   * 'other_git_workshop' - the one we just cloned, simulating a copy on a second
     computer.
@@ -54,10 +55,9 @@ To see how push works we have to commit and push some changes in
 `other_git_workshop`. Do this:
 
 1. In your terminal, call git clone wit your username for `YOURUSER`:
-  ```
-  $ git clone http://www.github.com/YOURUSER/git_workshop other_git_workshop
 
-  ```
+    `$ git clone http://www.github.com/YOURUSER/git_workshop other_git_workshop`
+  
 1. Change into the 'other_git_workshop' folder with `cd`
 1. In Atom, add a line to '00_analysis.Rmd' that says 'We got data.'
 1. In your terminal, stage the change to '00_analysis.Rmd' with `git add`
@@ -135,10 +135,10 @@ Fast-forward
 
 ### Happy Pull Workflow
 
-If we are working without collaborators we can avoid issues if we always run the
-pull command as our first action when doing work. There can never be a conflict
-between the local copy and the remote, because we always build on the latest
-work committed to the remote and pulled to our local copy.
+We can avoid issues if we always run the pull command as our first action when
+doing work. If we are working without collaborators, there can never be a
+conflict between the local copy and the remote, because we always build on the
+latest work committed to the remote and pulled to our local copy.
 
 The two things you can do to create problems are:
 
@@ -311,5 +311,6 @@ quickly and painlessly. At the time of writing some of the best are:
 ## Summary
 
 You learned key tools for working in a distributed way by yourself
+
 * git pull
 * resolving merge conflicts
