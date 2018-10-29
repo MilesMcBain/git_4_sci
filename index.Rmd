@@ -8,3 +8,5 @@ bibliography: references.bibtex
 biblio-style: apalike
 link-citations: yes
 ---
+
+# Git for Researchers
