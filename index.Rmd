@@ -9,4 +9,12 @@ biblio-style: apalike
 link-citations: yes
 ---
 
-# Git for Researchers
+# About this
+
+This is a short course designed to get researchers up and going with git and
+GitHub. It acknowledges git is fundamentally a command line tool and so tries to
+teach the minimum cli knowledge necessary to be use git effectively.
+
+Focus is on solo workflow using GitHub as a remote repository, although tools
+are taught that should allow the user participate in git-based collaboration
+without too much pain.
