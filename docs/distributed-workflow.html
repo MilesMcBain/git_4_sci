@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Git for Researchers</title>
+  <meta name="description" content="A short course to get researchers up and running with git/GitHub">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Git for Researchers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A short course to get researchers up and running with git/GitHub" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Git for Researchers" />
+  
+  <meta name="twitter:description" content="A short course to get researchers up and running with git/GitHub" />
+  
+
+<meta name="author" content="Miles McBain">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="using-a-git-repository.html">
+<link rel="next" href="getting-out-of-trouble.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html"><i class="fa fa-check"></i><b>1</b> Getting set to Git</a><ul>
+<li class="chapter" data-level="1.1" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#questions"><i class="fa fa-check"></i><b>1.1.1</b> Questions</a></li>
+<li class="chapter" data-level="1.1.2" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#objectives"><i class="fa fa-check"></i><b>1.1.2</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#software-setup"><i class="fa fa-check"></i><b>1.2</b> Software Setup</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#git"><i class="fa fa-check"></i><b>1.2.1</b> Git</a></li>
+<li class="chapter" data-level="1.2.2" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#atom-text-editor"><i class="fa fa-check"></i><b>1.2.2</b> Atom text editor</a></li>
+<li class="chapter" data-level="1.2.3" data-path="getting-set-to-git.html"><a href="getting-set-to-git.html#github"><i class="fa fa-check"></i><b>1.2.3</b> GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="why-gitgithub.html"><a href="why-gitgithub.html"><i class="fa fa-check"></i><b>2</b> Why Git/GitHub</a><ul>
+<li class="chapter" data-level="2.1" data-path="why-gitgithub.html"><a href="why-gitgithub.html#overview-1"><i class="fa fa-check"></i><b>2.1</b> Overview</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="why-gitgithub.html"><a href="why-gitgithub.html#questions-1"><i class="fa fa-check"></i><b>2.1.1</b> Questions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="why-gitgithub.html"><a href="why-gitgithub.html#objectives-1"><i class="fa fa-check"></i><b>2.1.2</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="why-gitgithub.html"><a href="why-gitgithub.html#why-are-we-here"><i class="fa fa-check"></i><b>2.2</b> Why are we here?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="command-line-basics.html"><a href="command-line-basics.html"><i class="fa fa-check"></i><b>3</b> Command Line Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="command-line-basics.html"><a href="command-line-basics.html#overview-2"><i class="fa fa-check"></i><b>3.1</b> Overview</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="command-line-basics.html"><a href="command-line-basics.html#questions-2"><i class="fa fa-check"></i><b>3.1.1</b> Questions</a></li>
+<li class="chapter" data-level="3.1.2" data-path="command-line-basics.html"><a href="command-line-basics.html#objectives-2"><i class="fa fa-check"></i><b>3.1.2</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="command-line-basics.html"><a href="command-line-basics.html#introduction"><i class="fa fa-check"></i><b>3.2</b> Introduction</a></li>
+<li class="chapter" data-level="3.3" data-path="command-line-basics.html"><a href="command-line-basics.html#shell-command-line-cli-terminal"><i class="fa fa-check"></i><b>3.3</b> Shell, command line, cli, terminal</a></li>
+<li class="chapter" data-level="3.4" data-path="command-line-basics.html"><a href="command-line-basics.html#file-system-navigation"><i class="fa fa-check"></i><b>3.4</b> File system navigation</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="command-line-basics.html"><a href="command-line-basics.html#listing-files-and-folders"><i class="fa fa-check"></i><b>3.4.1</b> Listing files and folders</a></li>
+<li class="chapter" data-level="3.4.2" data-path="command-line-basics.html"><a href="command-line-basics.html#moving-between-folders"><i class="fa fa-check"></i><b>3.4.2</b> Moving between folders</a></li>
+<li class="chapter" data-level="3.4.3" data-path="command-line-basics.html"><a href="command-line-basics.html#pathing-shortcuts"><i class="fa fa-check"></i><b>3.4.3</b> Pathing shortcuts</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="command-line-basics.html"><a href="command-line-basics.html#manipulating-the-filesystem"><i class="fa fa-check"></i><b>3.5</b> Manipulating the Filesystem</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="command-line-basics.html"><a href="command-line-basics.html#creating-folders"><i class="fa fa-check"></i><b>3.5.1</b> Creating Folders</a></li>
+<li class="chapter" data-level="3.5.2" data-path="command-line-basics.html"><a href="command-line-basics.html#moving-foldersfiles"><i class="fa fa-check"></i><b>3.5.2</b> Moving Folders/Files</a></li>
+<li class="chapter" data-level="3.5.3" data-path="command-line-basics.html"><a href="command-line-basics.html#wildcards-and-manipulations"><i class="fa fa-check"></i><b>3.5.3</b> Wildcards and Manipulations</a></li>
+<li class="chapter" data-level="3.5.4" data-path="command-line-basics.html"><a href="command-line-basics.html#file-removal"><i class="fa fa-check"></i><b>3.5.4</b> File Removal</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="command-line-basics.html"><a href="command-line-basics.html#summary"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html"><i class="fa fa-check"></i><b>4</b> Creating a GitHub Repository</a><ul>
+<li class="chapter" data-level="4.1" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#questions-3"><i class="fa fa-check"></i><b>4.1</b> Questions</a></li>
+<li class="chapter" data-level="4.2" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#objectives-3"><i class="fa fa-check"></i><b>4.2</b> Objectives</a></li>
+<li class="chapter" data-level="4.3" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#git-vs-github"><i class="fa fa-check"></i><b>4.3</b> Git vs GitHub</a></li>
+<li class="chapter" data-level="4.4" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#creating-a-hosted-repository-on-github"><i class="fa fa-check"></i><b>4.4</b> Creating a hosted repository on GitHub</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#creating-a-reposity-on-github.com"><i class="fa fa-check"></i><b>4.4.1</b> Creating a reposity on github.com</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="creating-a-github-repository.html"><a href="creating-a-github-repository.html#summary-1"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html"><i class="fa fa-check"></i><b>5</b> Using a git repository</a><ul>
+<li class="chapter" data-level="5.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#questions-4"><i class="fa fa-check"></i><b>5.1</b> Questions</a></li>
+<li class="chapter" data-level="5.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#objectives-4"><i class="fa fa-check"></i><b>5.2</b> Objectives</a></li>
+<li class="chapter" data-level="5.3" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#local-git-configuration"><i class="fa fa-check"></i><b>5.3</b> Local git configuration</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#configure-your-git-user-information"><i class="fa fa-check"></i><b>5.3.1</b> Configure your git user information</a></li>
+<li class="chapter" data-level="5.3.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#configure-your-text-editor"><i class="fa fa-check"></i><b>5.3.2</b> Configure your text editor</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#anatomy-of-git-cli-commands"><i class="fa fa-check"></i><b>5.4</b> Anatomy of git cli commands</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#how-to-git-help"><i class="fa fa-check"></i><b>5.4.1</b> How to git help</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#cloning-a-repository"><i class="fa fa-check"></i><b>5.5</b> Cloning a repository</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#create-a-repos-folder-optional"><i class="fa fa-check"></i><b>5.5.1</b> Create a repos folder (optional)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#clone-your-repository"><i class="fa fa-check"></i><b>5.5.2</b> Clone your repository</a></li>
+<li class="chapter" data-level="5.5.3" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#what-makes-a-git-repository"><i class="fa fa-check"></i><b>5.5.3</b> What makes a git repository?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#local-repository-workflow"><i class="fa fa-check"></i><b>5.6</b> Local repository workflow</a></li>
+<li class="chapter" data-level="5.7" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#status---determining-when-things-have-changed"><i class="fa fa-check"></i><b>5.7</b> Status - determining when things have changed</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#aside-branches"><i class="fa fa-check"></i><b>5.7.1</b> Aside: branches</a></li>
+<li class="chapter" data-level="5.7.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#introducing-changes"><i class="fa fa-check"></i><b>5.7.2</b> Introducing changes</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#diff---seeing-whats-changed"><i class="fa fa-check"></i><b>5.8</b> Diff - seeing what’s changed</a></li>
+<li class="chapter" data-level="5.9" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#add---moving-changes-to-staging"><i class="fa fa-check"></i><b>5.9</b> Add - moving changes to staging</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#stage-all-files-in-a-single-command"><i class="fa fa-check"></i><b>5.9.1</b> Stage all files in a single command</a></li>
+<li class="chapter" data-level="5.9.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#types-of-files-to-stage"><i class="fa fa-check"></i><b>5.9.2</b> Types of files to stage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#reset---unstaging-changes"><i class="fa fa-check"></i><b>5.10</b> Reset - unstaging changes</a><ul>
+<li class="chapter" data-level="5.10.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#born-for-the-stage"><i class="fa fa-check"></i><b>5.10.1</b> Born for the stage</a></li>
+<li class="chapter" data-level="5.10.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#caution-hard"><i class="fa fa-check"></i><b>5.10.2</b> Caution: –hard</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#commit---recording-staged-changes"><i class="fa fa-check"></i><b>5.11</b> Commit - recording staged changes</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#aborting-a-commit"><i class="fa fa-check"></i><b>5.11.1</b> Aborting a commit</a></li>
+<li class="chapter" data-level="5.11.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#completing-a-commit"><i class="fa fa-check"></i><b>5.11.2</b> Completing a commit</a></li>
+<li class="chapter" data-level="5.11.3" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#common-usage-git-commit--m-message"><i class="fa fa-check"></i><b>5.11.3</b> Common usage: git commit -m “message”</a></li>
+<li class="chapter" data-level="5.11.4" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#post-commit-status"><i class="fa fa-check"></i><b>5.11.4</b> Post commit status</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#push---sending-commits-to-github"><i class="fa fa-check"></i><b>5.12</b> Push - sending commits to GitHub</a><ul>
+<li class="chapter" data-level="5.12.1" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#github-history"><i class="fa fa-check"></i><b>5.12.1</b> GitHub history</a></li>
+<li class="chapter" data-level="5.12.2" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#your-turn-renaming-a-file"><i class="fa fa-check"></i><b>5.12.2</b> Your turn: renaming a file</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="using-a-git-repository.html"><a href="using-a-git-repository.html#summary-2"><i class="fa fa-check"></i><b>5.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="distributed-workflow.html"><a href="distributed-workflow.html"><i class="fa fa-check"></i><b>6</b> Distributed Workflow</a><ul>
+<li class="chapter" data-level="6.1" data-path="distributed-workflow.html"><a href="distributed-workflow.html#questions-5"><i class="fa fa-check"></i><b>6.1</b> Questions</a></li>
+<li class="chapter" data-level="6.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#objectives-5"><i class="fa fa-check"></i><b>6.2</b> Objectives</a></li>
+<li class="chapter" data-level="6.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#you-your-most-annoying-collaborator"><i class="fa fa-check"></i><b>6.3</b> You: your most annoying collaborator</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="distributed-workflow.html"><a href="distributed-workflow.html#simulate-another-computer"><i class="fa fa-check"></i><b>6.3.1</b> Simulate another computer</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="distributed-workflow.html"><a href="distributed-workflow.html#simplest-case-pulling-commits-pushed-from-elsewhere"><i class="fa fa-check"></i><b>6.4</b> Simplest case: Pulling commits pushed from elsewhere</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="distributed-workflow.html"><a href="distributed-workflow.html#refreshing-repository-status"><i class="fa fa-check"></i><b>6.4.1</b> Refreshing repository status</a></li>
+<li class="chapter" data-level="6.4.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#pulling"><i class="fa fa-check"></i><b>6.4.2</b> Pulling</a></li>
+<li class="chapter" data-level="6.4.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#happy-pull-workflow"><i class="fa fa-check"></i><b>6.4.3</b> Happy Pull Workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="distributed-workflow.html"><a href="distributed-workflow.html#resolving-a-merge-conflict"><i class="fa fa-check"></i><b>6.5</b> Resolving a merge conflict</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="distributed-workflow.html"><a href="distributed-workflow.html#adding-remote-commits"><i class="fa fa-check"></i><b>6.5.1</b> Adding remote commits</a></li>
+<li class="chapter" data-level="6.5.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#add-local-commits"><i class="fa fa-check"></i><b>6.5.2</b> Add local commits</a></li>
+<li class="chapter" data-level="6.5.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#fixing-merge-conflicts"><i class="fa fa-check"></i><b>6.5.3</b> Fixing merge conflicts</a></li>
+<li class="chapter" data-level="6.5.4" data-path="distributed-workflow.html"><a href="distributed-workflow.html#merging-without-atom-fanciness"><i class="fa fa-check"></i><b>6.5.4</b> Merging without Atom fanciness</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="distributed-workflow.html"><a href="distributed-workflow.html#using-merge-tools"><i class="fa fa-check"></i><b>6.6</b> Using merge tools</a></li>
+<li class="chapter" data-level="6.7" data-path="distributed-workflow.html"><a href="distributed-workflow.html#summary-3"><i class="fa fa-check"></i><b>6.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html"><i class="fa fa-check"></i><b>7</b> Getting out of trouble</a><ul>
+<li class="chapter" data-level="7.1" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#questions-6"><i class="fa fa-check"></i><b>7.1</b> Questions</a></li>
+<li class="chapter" data-level="7.2" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#objectives-6"><i class="fa fa-check"></i><b>7.2</b> Objectives</a></li>
+<li class="chapter" data-level="7.3" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#helping-yourself-with-git"><i class="fa fa-check"></i><b>7.3</b> Helping yourself with git</a></li>
+<li class="chapter" data-level="7.4" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#fixing-a-previous-commit"><i class="fa fa-check"></i><b>7.4</b> Fixing a previous commit</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#your-first-amendment"><i class="fa fa-check"></i><b>7.4.1</b> Your first amendment</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoring-a-file-to-an-earlier-version"><i class="fa fa-check"></i><b>7.5</b> Restoring a file to an earlier version</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoring-to-a-hash"><i class="fa fa-check"></i><b>7.5.1</b> Restoring to a hash</a></li>
+<li class="chapter" data-level="7.5.2" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoring-to-a-time-period-ago"><i class="fa fa-check"></i><b>7.5.2</b> Restoring to a time period ago</a></li>
+<li class="chapter" data-level="7.5.3" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoring-to-most-recent-version"><i class="fa fa-check"></i><b>7.5.3</b> Restoring to most recent version</a></li>
+<li class="chapter" data-level="7.5.4" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoration-resuce"><i class="fa fa-check"></i><b>7.5.4</b> Restoration resuce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#restoring-the-entire-repository-to-an-earlier-version"><i class="fa fa-check"></i><b>7.6</b> Restoring the entire repository to an earlier version</a></li>
+<li class="chapter" data-level="7.7" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#when-all-else-fails"><i class="fa fa-check"></i><b>7.7</b> When all else fails</a></li>
+<li class="chapter" data-level="7.8" data-path="getting-out-of-trouble.html"><a href="getting-out-of-trouble.html#summary-4"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="learning-more.html"><a href="learning-more.html"><i class="fa fa-check"></i><b>8</b> Learning More</a></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git for Researchers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="distributed-workflow" class="section level1">
+<h1><span class="header-section-number">6</span> Distributed Workflow</h1>
+<ul>
+<li><strong>Teaching</strong>: X min</li>
+<li><strong>Exercises</strong>: X min</li>
+</ul>
+<div id="questions-5" class="section level2">
+<h2><span class="header-section-number">6.1</span> Questions</h2>
+<ul>
+<li>How do I bring down commits I pushed to GitHub at work to my home PC, or vice versa?</li>
+<li>What happens when files on GitHub conflict with what I have committed locally?</li>
+</ul>
+</div>
+<div id="objectives-5" class="section level2">
+<h2><span class="header-section-number">6.2</span> Objectives</h2>
+<ul>
+<li>Understand how to pull down commits pushed on another computer to my local copy.</li>
+<li>Understand what a merge conflict is and how to resolve it using information provided by git.</li>
+</ul>
+</div>
+<div id="you-your-most-annoying-collaborator" class="section level2">
+<h2><span class="header-section-number">6.3</span> You: your most annoying collaborator</h2>
+<p>An advantage of syncing with the cloud (GitHub) is that you can clone your repository onto multiple computers and use the remote repository to keep all the local copies in sync.</p>
+<p>This workflow requires one new commands and some understanding of what can go wrong.</p>
+<div id="simulate-another-computer" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Simulate another computer</h3>
+<p>We can simulate another computer in the mix by creating a second local copy of your repository on your current computer.</p>
+<div id="clone-a-second-local-copy" class="section level4 exercise">
+<h4><span class="header-section-number">6.3.1.1</span> Clone a second local copy</h4>
+<ol style="list-style-type: decimal">
+<li>In your browser, get the url for your repository.</li>
+<li>In you terminal, use the <code>git clone</code> command to clone your repository to a new folder with the name ‘other_git_workshop’</li>
+</ol>
+<ul>
+<li>The form of the command will be <code>git clone &lt;URL&gt; &lt;Path to folder&gt;</code></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Use <code>ls</code> to check everything looks correct.</li>
+</ol>
+<p>Note: You didn’t clone one repository inside the other DID you? Use <code>mv</code> to fix.</p>
+</div>
+<div id="outcome" class="section level4">
+<h4><span class="header-section-number">6.3.1.2</span> Outcome</h4>
+<p>To be clear you should now have 2 local copies:</p>
+<ul>
+<li>‘git_workshop’ - the one we initially cloned in a previous lesson.</li>
+<li>‘other_git_workshop’ - the one we just cloned, simulating a copy on a second computer.</li>
+</ul>
+<p>Both of these reference the same GitHub repository.</p>
+</div>
+</div>
+</div>
+<div id="simplest-case-pulling-commits-pushed-from-elsewhere" class="section level2">
+<h2><span class="header-section-number">6.4</span> Simplest case: Pulling commits pushed from elsewhere</h2>
+<p>We use the <code>git pull</code> command to pull commits from the remote repository to a local copy. The most common usage is without any additional arguments or flags. Similarly to <code>push</code>, they exist but it is likely you will never use them.</p>
+<p>To see how push works we have to commit and push some changes in <code>other_git_workshop</code>. Do this:</p>
+<ol style="list-style-type: decimal">
+<li><p>In your terminal, call git clone wit your username for <code>YOURUSER</code>:</p>
+<p><code>$ git clone http://www.github.com/YOURUSER/git_workshop other_git_workshop</code></p></li>
+<li>Change into the ‘other_git_workshop’ folder with <code>cd</code></li>
+<li>In Atom, add a line to ‘00_analysis.Rmd’ that says ‘We got data.’</li>
+<li>In your terminal, stage the change to ‘00_analysis.Rmd’ with <code>git add</code></li>
+<li>Commit the change to ‘00_analysis.Rmd’ with <code>git commit</code> using an informative commit message.</li>
+<li><p>Push your commit with <code>git push</code></p></li>
+</ol>
+<div id="refreshing-repository-status" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Refreshing repository status</h3>
+<p>Now let’s see what the status of the ‘git_workshop’ repository is:</p>
+<ol style="list-style-type: decimal">
+<li>Change into the <code>git_workshop</code> folder with <code>cd</code></li>
+<li>Call <code>git status</code></li>
+</ol>
+<p>The output will look like this:</p>
+<pre><code>On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+nothing to commit, working tree clean
+</code></pre>
+<p>WAT? We just pushed commits to the remote repository but <code>status</code> is saying we’re up to date? It turns out that <code>status</code> is considers whether we are up to date with the last <strong>known</strong> version of the repository history, which we got when we pushed last. <code>status</code> does not contact the remote to see if anything new has changed.</p>
+<p>We can explicitly contact the repository with a command called fetch:</p>
+<pre><code>$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://www.github.com/milesmcbain/git_workshop
+   3ff91b0..ef6c217  master     -&gt; origin/master</code></pre>
+<p>Now if we call git status we should see:</p>
+<pre><code>$ git status
+On branch master
+Your branch is behind &#39;origin/master&#39; by 1 commit, and can be fast-forwarded.
+  (use &quot;git pull&quot; to update your local branch)
+nothing to commit, working tree clean
+</code></pre>
+<p>We see now we are behind the remote by 1 commit. Apparently we can be fast-forwarded. A fast-forward means our branch can have the new commits from the remote repository merged into its history by just inserting them after the old history. It’s git’s way of telling us there’s no problems it needs a human to sort out.</p>
+</div>
+<div id="pulling" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> Pulling</h3>
+<p>We do not need to <code>fetch</code> before we run the pull command. If we run the <code>pull</code> command and no new work exists it nothing will happen.</p>
+<p>If we run the <code>git pull</code> command we will get the work that was comitted and pushed in <code>other_git_workshop</code>:</p>
+<pre><code>$ git pull
+Updating 3ff91b0..ef6c217
+Fast-forward
+ 00_analysis.Rmd | 1 +
+ 1 file changed, 1 insertion(+)</code></pre>
+</div>
+<div id="happy-pull-workflow" class="section level3">
+<h3><span class="header-section-number">6.4.3</span> Happy Pull Workflow</h3>
+<p>We can avoid issues if we always run the pull command as our first action when doing work. If we are working without collaborators, there can never be a conflict between the local copy and the remote, because we always build on the latest work committed to the remote and pulled to our local copy.</p>
+<p>The two things you can do to create problems are:</p>
+<ul>
+<li>forgetting to pull and making commits</li>
+<li>forgetting to push so when you do remember to pull next you get no new work.</li>
+</ul>
+<p>Forgetting is inevitable, don’t be too hard on yourself if it happens and don’t panic. Git was built with conflict resolution in mind. The situation can be resolved and you won’t lose work.</p>
+</div>
+</div>
+<div id="resolving-a-merge-conflict" class="section level2">
+<h2><span class="header-section-number">6.5</span> Resolving a merge conflict</h2>
+<p>We will simulate a situation where you forgot to pull existing remote commits, and made new commits locally.</p>
+<div id="adding-remote-commits" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> Adding remote commits</h3>
+<ol style="list-style-type: decimal">
+<li>Change into the ‘other_git_workshop’ folder with <code>cd</code></li>
+<li>In Atom, Change the first line in ‘00_analysis.Rmd’ to say ‘We got interesting data.’</li>
+<li>In your terminal, stage the change to ‘00_analysis.Rmd’ with <code>git add</code></li>
+<li>Commit the change to ‘00_analysis.Rmd’ with <code>git commit</code> using an informative commit message.</li>
+<li>Push your commit with <code>git push</code></li>
+</ol>
+<p>The push should succeed.</p>
+</div>
+<div id="add-local-commits" class="section level3">
+<h3><span class="header-section-number">6.5.2</span> Add local commits</h3>
+<ol style="list-style-type: decimal">
+<li>Change into the ‘git_workshop’ folder with <code>cd</code></li>
+<li>In Atom, Change the first line in ‘00_analysis.Rmd’ to say ‘We got exciting data.’</li>
+<li>In your terminal, stage the change to ‘00_analysis.Rmd’ with <code>git add</code></li>
+<li>Commit the change to ‘00_analysis.Rmd’ with <code>git commit</code> using an informative commit message.</li>
+<li>Push your commit with <code>git push</code></li>
+</ol>
+<p>The push fails with:</p>
+<pre><code>$ git push
+To http://www.github.com/milesmcbain/git_workshop
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to &#39;http://www.github.com/milesmcbain/git_workshop&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+<p>So we take git’s hint and call <code>git pull</code> which says:</p>
+<pre><code>$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From http://www.github.com/milesmcbain/git_workshop
+   ef6c217..923cb03  master     -&gt; origin/master
+Auto-merging 00_analysis.Rmd
+CONFLICT (content): Merge conflict in 00_analysis.Rmd
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>CONFLICT(!). Git tells us the file with the problem. This happened because both changes affected the same line. Git is asking us to ‘fix merge conflicts and commit the result’.</p>
+</div>
+<div id="fixing-merge-conflicts" class="section level3">
+<h3><span class="header-section-number">6.5.3</span> Fixing merge conflicts</h3>
+<p>When a merge conflict happens git will place some markup inside the file to assist with resolving a conflict. Atom will see this and create a dialogue. If we check the contents of ‘git_workshop/00_analysis.Rmd’ in Atom we should see:</p>
+<div class="figure">
+<img src="figs/atom_conflict.png" />
+
+</div>
+<p>We resolve the conflict by clicking ‘Use me’ on the one we want to keep. In this case let’s choose the pink ‘our changes’. Now:</p>
+<ol style="list-style-type: decimal">
+<li>Save the file in Atom.</li>
+<li>In the terminal, stage the file with <code>git add</code>.</li>
+<li>Commit the file with git <code>commit</code></li>
+</ol>
+<p>Notice how git has automatically added information to the commit message:</p>
+<pre><code>Merge branch &#39;master&#39; of https://www.github.com/milesmcbain/git_workshop
+
+# Conflicts:
+#       00_analysis.Rmd
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#       .git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.
+# On branch master</code></pre>
+<p>Leave the message unchanged, save and close the file to complete the commit. This type of commit is called a ‘merge commit’.</p>
+<p>Now all that is left:</p>
+<ol style="list-style-type: decimal">
+<li>push the merge commit with <code>git push</code>.</li>
+<li>change to the <code>other_git_workshop</code> folder and pull the merge commit with <code>git    pull</code></li>
+</ol>
+<p>The pull will succeed and the repositories are now both in sync with GitHub. Check this if you like.</p>
+</div>
+<div id="merging-without-atom-fanciness" class="section level3">
+<h3><span class="header-section-number">6.5.4</span> Merging without Atom fanciness</h3>
+<p>You can get rid off the merge assistance in Atom by right clicking on the conflict and selecting ‘dismiss’. In plain text the conflict markup looks like this:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+We got exciting data.
+=======
+We got interesting data.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3f6079ade2cf03e0f4c5c5bd7bec5101100cb51a</code></pre>
+<p>To understand this you need one new piece of information: <strong>HEAD</strong> is a reference which refers to the last commit on the current local branch, so HEAD is the last thing we committed to master. The other really long ugly string is the full hash of the commit on the remote.</p>
+<p>So to resolve the conflict in plain text, we delete the fencing and replace the section with the text that we wish to use. Importantly, the text can:</p>
+<ul>
+<li>Use either version</li>
+<li>Use both versions</li>
+<li>Use neither version and contain completely new content.</li>
+</ul>
+<p>For example a valid way to resolve this conflict would be:</p>
+<pre><code>We got exciting data,
+We got interesting data.</code></pre>
+<p>We’d save, stage and commit that and git would accept it as resolving the conflict.</p>
+<div id="manual-merge" class="section level4 exercise">
+<h4><span class="header-section-number">6.5.4.1</span> Manual Merge</h4>
+<ul>
+<li>In the same fashion as our example engineer a conflict by changing the same line in:</li>
+<li>‘other_git_workshop/00_analysis.Rmd’</li>
+<li><p>‘git_workshop/00_analysis.Rmd’</p></li>
+<li>Commit and push one before committing and pushing the other.</li>
+<li><p>This time resolve the conflicted file in plain text by dismissing the atom merge help (right click ‘dismiss’).</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="using-merge-tools" class="section level2">
+<h2><span class="header-section-number">6.6</span> Using merge tools</h2>
+<p>Many git GUI applications have powerful features for resolving merge conflicts quickly and painlessly. At the time of writing some of the best are:</p>
+<ul>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+<li><a href="https://www.sublimemerge.com">Sublime Merge</a></li>
+<li><a href="http://meldmerge.org/">Meld</a></li>
+</ul>
+</div>
+<div id="summary-3" class="section level2">
+<h2><span class="header-section-number">6.7</span> Summary</h2>
+<p>You learned key tools for working in a distributed way by yourself</p>
+<ul>
+<li>git pull</li>
+<li>resolving merge conflicts</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="using-a-git-repository.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="getting-out-of-trouble.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
