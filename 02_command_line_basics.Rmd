@@ -165,9 +165,9 @@ will work also.
 
 Answer the following:
 
-2. Obtain the usage information for `ls`. What is a flag that you can use to
-   arrange the output in alphabetical order?
-1. By convention flags that are full words use a double dash `--` and flags are
+1. Obtain the usage information for `ls`. What is a flag that you can use to
+   arrange the output according to date modified?
+2. By convention flags that are full words use a double dash `--` and flags are
    a single letter have a singe dash. Why must this be the case?
 
 ### Moving between folders
@@ -295,6 +295,11 @@ moving them to a new place in the file system e.g.:
 ```
 miles@pa00120549:~/eg_project$ mv scripts src
 ```
+
+#### Move a file {.exercise}
+
+Move 'output.csv' into the `results` folder of 'eg_project' using the `mv` command.
+
 
 #### Rename a file {.exercise}
 
