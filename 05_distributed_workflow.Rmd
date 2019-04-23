@@ -53,17 +53,13 @@ Similarly to `push`, they exist but it is likely you will never use them.
 
 To see how push works we have to commit and push some changes in
 `other_git_workshop`. Do this:
-
-1. In your terminal, call git clone wit your username for `YOURUSER`:
-
-    `$ git clone http://www.github.com/YOURUSER/git_workshop other_git_workshop`
   
-1. Change into the 'other_git_workshop' folder with `cd`
-1. In Atom, add a line to '00_analysis.Rmd' that says 'We got data.'
-1. In your terminal, stage the change to '00_analysis.Rmd' with `git add`
-1. Commit the change to '00_analysis.Rmd' with `git commit` using an informative
-   commit message.
-1. Push your commit with `git push`
+  1. Change into the 'other_git_workshop' folder with `cd`
+  1. Open the 'other_git_workshop' folder in Atom
+  1. In Atom, add a line to '00_analysis.Rmd' that says 'We got data.'
+  1. In your terminal, stage the change to '00_analysis.Rmd' with `git add`
+  1. Commit the change to '00_analysis.Rmd' with `git commit` using an informative commit message
+  1. Push your commit with `git push`
 
 ### Refreshing repository status
 
@@ -298,6 +294,15 @@ conflict.
 
 * Commit and push one before committing and pushing the other.
 * This time resolve the conflicted file in plain text by dismissing the atom merge help (right click 'dismiss').
+
+### On Automatic Merging
+
+In the case where git can automatically interleave the remote and the local
+branches without running into conflicts, it will still prompt you for a commit
+message, which will be auto populated with `merging <remote branch>...` in
+similar way to the manual examples. It is automatically creating a commit
+called, sometimes called a 'merge commit' to mark the merging of the branches in
+the history.
 
 ## Using merge tools
 

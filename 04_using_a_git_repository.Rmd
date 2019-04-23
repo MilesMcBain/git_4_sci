@@ -186,9 +186,9 @@ present state of your local repository.
 The `status` command gives us useful information about the status of our work
 relative to the local repository history and remote repository.
 
-It can be run with no additional arguments or flags. It will search upward from
-the current working directory until it finds a git repository or fails. If we run
-it from within our freshly cloned repository we get:
+It can be run with no additional arguments or flags, and it will work from
+within working directory that is a sub-folder of a git repository. If we run it
+from within our freshly cloned repository we get:
 
 ```
 $ git status
@@ -219,7 +219,7 @@ following:
 1. Create a new folder called 'data' in our repository with `mkdir`
 2. Create a new file in the repository called 'analysis.Rmd' with Atom
 2. Create a new file in the repository called 'data.csv' with Atom.
-3. Add the following text on a new line in README.md: "Just gitting started!"
+3. Change the first line of text under the header in README.md to: "Just gitting started!"
 
 This is what Atom should look like when we're done:
 

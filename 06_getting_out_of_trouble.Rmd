@@ -17,6 +17,7 @@ In this lesson we'll cover just a few of the ways you can get yourself out of tr
 * `checkout` which will allow us to restore files to previous versions.
 
 There are other great resources on this topic, see:
+
   * [OhShitGit](https://ohshitgit.com/)
   * [Getting Unstuck from Git](http://inundata.org/lectures/git/#/)
 
@@ -24,7 +25,7 @@ There are other great resources on this topic, see:
 In this scenario you've made a commit and then you realise you missed a file or
 made an error with the commit message.
 
-You an call the `git commit` command with the `--ammend` flag and any staged
+You an call the `git commit` command with the `--amend` flag and any staged
 files will be added to the previous commit and you will be given a chance to
 rewrite the commit message.
 
@@ -36,7 +37,7 @@ Using the 'git_workshop' repository from previous lessons:
 1. On the terminal, Save, stage, and commit the file with commit messge "added part one"
 1. In Atom, add a new line in 00_analysis.Rmd: "part two"
 1. Save and stage the file.
-1. Ammend the commit as described above.
+1. Amend the commit as described above.
 1. Push the commit.
 1. Check the history on GitHub and confirm "part one" and "part two" were added as part of the same commit.
 
@@ -125,11 +126,12 @@ beyond the scope of this lesson.
 This state of git purgatory is called 'detached HEAD' as the head reference no
 longer points to a commit on the branch's timeline.
 
-As before, you can return the entire repository to the present with:
+We can't use `git checkout HEAD` as before to return to present because HEAD is no longer on any timeline. So we need to put HEAD back on a timeline using:
 
 ```
-git checkout HEAD
+git checkout master
 ```
+Where HEAD will be pointing to the latest commit by default.
 
 Permanently resetting the repository and its history to an earlier time point is
 possible but can lead to permanent loss of work. You will need to look into
