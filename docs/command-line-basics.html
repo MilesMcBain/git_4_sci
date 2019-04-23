@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Git for Scientists</title>
+  <title>4 Command Line Basics | Git for Scientists</title>
   <meta name="description" content="A short course to get researchers up and running with git/GitHub">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Git for Scientists" />
+  <meta property="og:title" content="4 Command Line Basics | Git for Scientists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Git for Scientists" />
+  <meta name="twitter:title" content="4 Command Line Basics | Git for Scientists" />
   
   <meta name="twitter:description" content="A short course to get researchers up and running with git/GitHub" />
   
@@ -35,6 +35,7 @@
 <link rel="next" href="creating-a-github-repository.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -167,6 +168,7 @@
 <li class="chapter" data-level="7.5.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#add-local-commits"><i class="fa fa-check"></i><b>7.5.2</b> Add local commits</a></li>
 <li class="chapter" data-level="7.5.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#fixing-merge-conflicts"><i class="fa fa-check"></i><b>7.5.3</b> Fixing merge conflicts</a></li>
 <li class="chapter" data-level="7.5.4" data-path="distributed-workflow.html"><a href="distributed-workflow.html#merging-without-atom-fanciness"><i class="fa fa-check"></i><b>7.5.4</b> Merging without Atom fanciness</a></li>
+<li class="chapter" data-level="7.5.5" data-path="distributed-workflow.html"><a href="distributed-workflow.html#on-automatic-merging"><i class="fa fa-check"></i><b>7.5.5</b> On Automatic Merging</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="distributed-workflow.html"><a href="distributed-workflow.html#using-merge-tools"><i class="fa fa-check"></i><b>7.6</b> Using merge tools</a></li>
 <li class="chapter" data-level="7.7" data-path="distributed-workflow.html"><a href="distributed-workflow.html#summary-3"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
@@ -236,27 +238,52 @@
 </div>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">4.2</span> Introduction</h2>
-<p>git is fundamentally a command line tool. Although there are many graphical user interfaces that can simplify its use, none contain the full set of features available on the command line.</p>
-<p>If you ever encounter trouble with a git repository, or need to find out how to do something important with it, you will invariably stumble across help in the form of command line instructions. This is why comfort with the command line is essential for learning git.</p>
+<p>git is fundamentally a command line tool. Although there are many graphical user
+interfaces that can simplify its use, none contain the full set of features available on the command line.</p>
+<p>If you ever encounter trouble with a git repository, or need to find out how to
+do something important with it, you will invariably stumble across help in the
+form of command line instructions. This is why comfort with the command line is
+essential for learning git.</p>
 </div>
 <div id="shell-command-line-cli-terminal" class="section level2">
 <h2><span class="header-section-number">4.3</span> Shell, command line, cli, terminal</h2>
-<p>All these words in the title above are used interchangeably to mean the same thing: a sparse window, usually with a dark backgroud and light text, featuring a prompt followed by a cursor. In the movies hacking computers often involves people typing really fast into this window.</p>
-<p>The command line interface (cli), is a text-based interface to a computer program. Pretty much everyone primarily uses a Graphical User Interface (GUI) to interact with their programs, but historically this is only recent. Most of the time we’ve had with computers has been using text-based interfaces and often the GUI can only access a subset of functionality available on the cli. There are many important programs that only have a cli (e.g. pandoc).</p>
-<p>‘Terminal’ is short for ‘terminal emulator’ which is to say it is a program which emulates a physical input and display device called a terminal, that used to connect to a mainframe computer in the early days of computing. It is the program that draws the dark background, light text, and cursor.</p>
-<p>A ‘shell’ is a program that provides a cli to your operating system. Think of the functionality your operating system provides: manipulating your file system, running and stopping programs, changing system settings etc. All of this can be done via text with a shell. When you ‘open a terminal’ the program that the terminal is talking to initially is a shell. For a given operating system you often have a choice of many shells. The most popular shell is the ‘Bourne Again Shell’ or ‘bash’.</p>
+<p>All these words in the title above are used interchangeably to mean the same
+thing: a sparse window, usually with a dark backgroud and light text, featuring
+a prompt followed by a cursor. In the movies hacking computers often
+involves people typing really fast into this window.</p>
+<p>The command line interface (cli), is a text-based interface to a computer
+program. Pretty much everyone primarily uses a Graphical User Interface (GUI) to
+interact with their programs, but historically this is only recent. Most of the
+time we’ve had with computers has been using text-based interfaces and often the
+GUI can only access a subset of functionality available on the cli. There are
+many important programs that only have a cli (e.g. pandoc).</p>
+<p>‘Terminal’ is short for ‘terminal emulator’ which is to say it is a program
+which emulates a physical input and display device called a terminal, that used
+to connect to a mainframe computer in the early days of computing. It is the
+program that draws the dark background, light text, and cursor.</p>
+<p>A ‘shell’ is a program that provides a cli to your operating system. Think of
+the functionality your operating system provides: manipulating your file system,
+running and stopping programs, changing system settings etc. All of this can be
+done via text with a shell. When you ‘open a terminal’ the program that the
+terminal is talking to initially is a shell. For a given operating system you
+often have a choice of many shells. The most popular shell is the ‘Bourne Again
+Shell’ or ‘bash’.</p>
 </div>
 <div id="file-system-navigation" class="section level2">
 <h2><span class="header-section-number">4.4</span> File system navigation</h2>
 <div id="listing-files-and-folders" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Listing files and folders</h3>
-<p>We’re jumping in! Windows users, run the <code>gitbash</code> program now. MacOS and Linux users open a fresh terminal.</p>
-<p>First lets consider what we can see. Usually your terminal will greet you with a prompt that looks like this:</p>
+<p>We’re jumping in! Windows users, run the <code>gitbash</code> program now. MacOS and Linux
+users open a fresh terminal.</p>
+<p>First lets consider what we can see. Usually your terminal will greet you with a
+prompt that looks like this:</p>
 <pre><code>miles@miles-macbook:~$</code></pre>
 <p>On Windows it will contain the same elements but look like this:</p>
 <pre><code>miles@miles-pc MINGW64 ~
 $</code></pre>
-<p>Followed by a cursor. Type the command <code>pwd</code>, for ‘print working directory’, and hit enter. This will show us the folder in your file system the shell is currently looking. It should return text to the terminal like so:</p>
+<p>Followed by a cursor. Type the command <code>pwd</code>, for ‘print working directory’, and
+hit enter. This will show us the folder in your file system the shell is
+currently looking. It should return text to the terminal like so:</p>
 <pre><code>miles@miles-macbook:~$ pwd
 /home/miles
 miles@miles-macbook:~$</code></pre>
@@ -266,18 +293,28 @@ miles@miles-macbook:~$</code></pre>
    home --      # Home folder
         | 
         miles  # user&#39;s individual home folder - working directory</code></pre>
-<p>Now here’s a new command: <code>ls</code> will <strong>list</strong> the contents of the working directory. Run that command and you will see the contents of your home folder.</p>
-<p>But <code>ls</code> is much more versatile than this. We can use things called ‘flags’ and ‘arguments’ to interface with <code>ls</code>’s additional features. For example we can list the contents of our Documents folder like so:</p>
+<p>Now here’s a new command: <code>ls</code> will <strong>list</strong> the contents of the working
+directory. Run that command and you will see the contents of your home folder.</p>
+<p>But <code>ls</code> is much more versatile than this. We can use things called ‘flags’ and
+‘arguments’ to interface with <code>ls</code>’s additional features. For example we can
+list the contents of our Documents folder like so:</p>
 <pre><code>miles@miles-macbook:~$ ls Documents
 acp_3d-1.png  _cert.png  parchemnt_pix2.xcf
 rock_opera.png  the_log.txt  uluru.jpg
 miles@miles-macbook:~$ </code></pre>
-<p>‘Documents’ is an <strong>argument</strong> to the <code>ls</code> command. We pass commands arguments by typing them after the command name.</p>
-<p>We can view hidden files using the flag <code>-a</code> for ‘all’. Do that for the working directory like so:</p>
+<p>‘Documents’ is an <strong>argument</strong> to the <code>ls</code> command. We pass commands arguments
+by typing them after the command name.</p>
+<p>We can view hidden files using the flag <code>-a</code> for ‘all’. Do that for the working
+directory like so:</p>
 <pre><code>miles@miles-macbook:~$ ls -a</code></pre>
-<p>Are there more hidden files and folders than you expected? What do you notice about their file names?</p>
-<p>A flag distinct from an argument in that a flag is a constant not a variable. If a flag is present it ‘switches on’ certain behaviour. There are two forms: ‘–word’ and ‘-a’.</p>
-<p>Multiple single letter flags can be combined after a single dash. We can instruct <code>ls</code> to ‘list <strong>all</strong> in a <strong>long</strong> format, readable for <strong>humans</strong>’ with:</p>
+<p>Are there more hidden files and folders than you expected? What do you notice
+about their file names?</p>
+<p>A flag distinct from an argument in that a flag is a constant not a variable. If
+a flag is present it ‘switches on’ certain behaviour. There are two forms:
+‘–word’ and ‘-a’.</p>
+<p>Multiple single letter flags can be combined after a single dash. We can
+instruct <code>ls</code> to ‘list <strong>all</strong> in a <strong>long</strong> format, readable for <strong>humans</strong>’
+with:</p>
 <pre><code>miles@miles-macbook:~$ ls -alh
 total 428K
 drwxr-xr-x 36 miles miles 4.0K Oct 18 15:01 .
@@ -296,48 +333,67 @@ drwxr-xr-x  2 miles miles 4.0K Jul 30 21:16 Desktop
 <h4><span class="header-section-number">4.4.1.1</span> Combining arguments and flags</h4>
 <p>In this exercise you will figure out how to use arguments and flags together.</p>
 <ol style="list-style-type: decimal">
-<li>Using the flags you’ve seen so far, experiment to determine what order the flags have to be in.</li>
-<li>Create a command that lists all the contents of your ‘Documents’ folder in long format.</li>
+<li>Using the flags you’ve seen so far, experiment to determine what order the
+flags have to be in.</li>
+<li>Create a command that lists all the contents of your ‘Documents’ folder in
+long format.</li>
 </ol>
 </div>
 <div id="one-flag-to-rule-them-all" class="section level4 exercise">
 <h4><span class="header-section-number">4.4.1.2</span> One flag to rule them all</h4>
-<p>Most commands can give you useage information about what kinds of flags and arguments they support if you call them with the flag <code>--help</code>, sometimes <code>-h</code> will work also.</p>
+<p>Most commands can give you useage information about what kinds of flags and
+arguments they support if you call them with the flag <code>--help</code>, sometimes <code>-h</code>
+will work also.</p>
 <p>Answer the following:</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Obtain the usage information for <code>ls</code>. What is a flag that you can use to arrange the output in alphabetical order?</li>
-<li>By convention flags that are full words use a double dash <code>--</code> and flags are a single letter have a singe dash. Why must this be the case?</li>
+<ol style="list-style-type: decimal">
+<li>Obtain the usage information for <code>ls</code>. What is a flag that you can use to
+arrange the output according to date modified?</li>
+<li>By convention flags that are full words use a double dash <code>--</code> and flags are
+a single letter have a singe dash. Why must this be the case?</li>
 </ol>
 </div>
 </div>
 <div id="moving-between-folders" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Moving between folders</h3>
-<p>The command <code>cd</code> <strong>changes</strong> the working <strong>directory</strong>. To use it type <code>cd</code> followed by an argument which is the path of the folder to change to. The path can be either ‘absolute’ or ‘relative’. For example, assuming the current working directory is the user’s home (<code>/home/miles</code>), to change directory to their Downloads we could do either of these:</p>
+<p>The command <code>cd</code> <strong>changes</strong> the working <strong>directory</strong>. To use it type <code>cd</code>
+followed by an argument which is the path of the folder to change to. The path
+can be either ‘absolute’ or ‘relative’. For example, assuming the current
+working directory is the user’s home (<code>/home/miles</code>), to change directory to
+their Downloads we could do either of these:</p>
 <pre><code>miles@miles-macbook:~$ cd Downloads
 miles@miles-macbook:~/Downloads$ 
 
 miles@miles-macbook:~$ cd /home/miles/Downloads
 miles@miles-macbook:~/Downloads$ </code></pre>
-<p>A path that starts with <code>/</code> is assumed to be absolute. Paths that do not are assumed to be relative to the current working directory.</p>
-<p>Notice how the prompt has changed to reflect the new working directory. The <code>~</code> symbol is a shorthand for the user’s home directory and we can use it to form paths.</p>
+<p>A path that starts with <code>/</code> is assumed to be absolute. Paths that do not are
+assumed to be relative to the current working directory.</p>
+<p>Notice how the prompt has changed to reflect the new working directory. The <code>~</code>
+symbol is a shorthand for the user’s home directory and we can use it to form
+paths.</p>
 <div id="changing-challenges" class="section level4 exercise">
 <h4><span class="header-section-number">4.4.2.1</span> Changing Challenges</h4>
 <ol style="list-style-type: decimal">
-<li>You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the <code>~</code> in the path.</li>
-<li>Change to the root folder of the system and list its contents. Change to your home folder.</li>
+<li>You should be in your Downloads folder. Change to your Documents folder in a
+single command incorporating the <code>~</code> in the path.</li>
+<li>Change to the root folder of the system and list its contents. Change to your
+home folder.</li>
 </ol>
 </div>
 </div>
 <div id="pathing-shortcuts" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Pathing shortcuts</h3>
 <p>Apart from <code>~</code> there are two other symbols with special meanings in paths:</p>
-<p><code>.</code> is shorthand for ‘the current working directory’. So this won’t change anywhere:</p>
+<p><code>.</code> is shorthand for ‘the current working directory’. So this won’t change
+anywhere:</p>
 <pre><code>miles@miles-macbook:~$ cd .</code></pre>
 <p>and these are equivalent:</p>
 <pre><code>miles@miles-macbook:~$ cd ./Downloads
 
 miles@miles-macbook:~$ cd Downloads</code></pre>
-<p><code>..</code> is shorthand for ‘the parent of the current working directory’. It can be used multiple times so, <code>cd ..</code> would move up one folder and <code>cd ../..</code> would move up two. It is useful for creating relative paths to other branches of a directory tree e.g.:</p>
+<p><code>..</code> is shorthand for ‘the parent of the current working directory’. It can be
+used multiple times so, <code>cd ..</code> would move up one folder and <code>cd ../..</code> would
+move up two. It is useful for creating relative paths to other branches of a
+directory tree e.g.:</p>
 <pre><code>miles@miles-macbook:~$ cd ~
 miles@miles-macbook:~$ cd Downloads
 miles@miles-macbook:~/Downloads$ cd ../Documents
@@ -358,29 +414,38 @@ miles@miles-macbook:~/Documents$ </code></pre>
 <div id="creating-folders" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Creating Folders</h3>
 <p>Let’ create an example project folder from the command line:</p>
-<p>First we’ll use the <code>mkdir</code> command to <strong>make</strong> a <strong>directory</strong>. The argument to the command is the path of the directory to be created. To create a directory in the current folder we just need to use its name since and the path is assumed to be relative.</p>
+<p>First we’ll use the <code>mkdir</code> command to <strong>make</strong> a <strong>directory</strong>. The argument to
+the command is the path of the directory to be created. To create a
+directory in the current folder we just need to use its name since and the path
+is assumed to be relative.</p>
 <pre><code>miles@miles-macbook:~$ mkdir eg_project</code></pre>
 <p>Confirm the project folder exists using <code>ls</code> and change into it with <code>cd</code>:</p>
 <pre><code>miles@miles-macbook:~$ ls
 miles@miles-macbook:~$ cd eg_project</code></pre>
-<p>Then we’ll create several more folders as if the project is an analysis, <code>mkdir</code> can create multiple directories at once, for each argument passed.</p>
+<p>Then we’ll create several more folders as if the project is an analysis, <code>mkdir</code>
+can create multiple directories at once, for each argument passed.</p>
 <pre><code>mkdir doc data results scripts</code></pre>
 </div>
 <div id="moving-foldersfiles" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Moving Folders/Files</h3>
-<p>Using Atom we’ll create some empty files. To open our project use <strong>File</strong> -&gt; <strong>Open Folder…</strong> and select the ‘eg_project’ folder.</p>
+<p>Using Atom we’ll create some empty files. To open our project use <strong>File</strong>
+-&gt; <strong>Open Folder…</strong> and select the ‘eg_project’ folder.</p>
 <p>Create the 4 files in the <code>eg_project</code> folder as shown:</p>
-<div class="figure">
-<img src="figs/atom_folders.png" />
-
-</div>
+<p><img src="figs/atom_folders.png" /></p>
 <p>They don’t need to contain anything.</p>
-<p>Let’s say we want to move the .Rmd file to the scripts folder. We can use the <code>mv</code> command to <strong>move</strong> files or folders. <code>mv</code> takes two arguments, the first being files or folders to move and the second being the path to move then to. Our command would look like:</p>
+<p>Let’s say we want to move the .Rmd file to the scripts folder. We can use the <code>mv</code> command to <strong>move</strong> files or folders. <code>mv</code> takes two arguments, the first being files or folders to move and
+the second being the path to move then to. Our command would look like:</p>
 <pre><code>miles@pa00120549:~/eg_project$ mv paper.rmd scripts</code></pre>
-<p>Let’s say we don’t like the name ‘scripts’ since ‘paper.Rmd’ is not really a script - it’s a source file. We can also use <code>mv</code> to rename files and folders, by moving them to a new place in the file system e.g.:</p>
+<p>Let’s say we don’t like the name ‘scripts’ since ‘paper.Rmd’ is not really a
+script - it’s a source file. We can also use <code>mv</code> to rename files and folders, by
+moving them to a new place in the file system e.g.:</p>
 <pre><code>miles@pa00120549:~/eg_project$ mv scripts src</code></pre>
+<div id="move-a-file" class="section level4 exercise">
+<h4><span class="header-section-number">4.5.2.1</span> Move a file</h4>
+<p>Move ‘output.csv’ into the <code>results</code> folder of ‘eg_project’ using the <code>mv</code> command.</p>
+</div>
 <div id="rename-a-file" class="section level4 exercise">
-<h4><span class="header-section-number">4.5.2.1</span> Rename a file</h4>
+<h4><span class="header-section-number">4.5.2.2</span> Rename a file</h4>
 <p>Complete the command below to rename the ‘paper.Rmd’ file to ‘methods.Rmd’ using <code>mv</code>:</p>
 <pre><code>miles@pa00120549:~/eg_project$ mv src/paper.Rmd ...</code></pre>
 <p>Be sure to check your result using <code>ls</code>.</p>
@@ -388,10 +453,12 @@ miles@miles-macbook:~$ cd eg_project</code></pre>
 </div>
 <div id="wildcards-and-manipulations" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> Wildcards and Manipulations</h3>
-<p>Now we’re going to see how we can use wildcards to perform actions on many files or folders at once. A wildcard is the the <code>*</code> symbol, and it can be used to provide file system arguments that match patterns.</p>
+<p>Now we’re going to see how we can use wildcards to perform actions on many
+files or folders at once. A wildcard is the the <code>*</code> symbol, and it can be used to provide file system arguments that match patterns.</p>
 <p>For example, lets say we want to list all the data files in the current folder:</p>
 <pre><code>miles@pa00120549:~/eg_project$ ls -alh *csv</code></pre>
-<p>This lists all files that end in ‘csv’. We could also use it a the end of a path to match all items that start with a prefix, e.g. also folders starting with ‘d’:</p>
+<p>This lists all files that end in ‘csv’. We could also use it a the end of a path
+to match all items that start with a prefix, e.g. also folders starting with ‘d’:</p>
 <pre><code>miles@pa00120549:~/eg_project$ ls -alh d*</code></pre>
 <p>We can use this with all types of file manipulations!</p>
 <div id="move-a-group" class="section level4 exercise">
@@ -403,13 +470,16 @@ miles@miles-macbook:~$ cd eg_project</code></pre>
 </div>
 <div id="file-removal" class="section level3">
 <h3><span class="header-section-number">4.5.4</span> File Removal</h3>
-<p>The <code>rm</code> command can be used to <strong>remove</strong> files and folders. It takes the path of the files or folders as its argument. It requires the <code>-r</code> (<strong>recursive</strong>) flag to remove folders.</p>
+<p>The <code>rm</code> command can be used to <strong>remove</strong> files and folders. It takes the path of
+the files or folders as its argument. It requires the <code>-r</code> (<strong>recursive</strong>) flag
+to remove folders.</p>
 <p>To remove the ‘doc’ folder we’d do:</p>
 <pre><code>miles@pa00120549:~/eg_project$ rm -r doc</code></pre>
 <div id="wildcard-extermination" class="section level4 exercise">
 <h4><span class="header-section-number">4.5.4.1</span> Wildcard extermination</h4>
 <ol style="list-style-type: decimal">
-<li>Combine the <code>rm</code> command with two wildcards to remove all .csv files in our project with a single command.</li>
+<li>Combine the <code>rm</code> command with two wildcards to remove all .csv files in our
+project with a single command.</li>
 </ol>
 <p><em>Hint:</em> You can use a wildcard in the path for both the folder and file name portion.</p>
 </div>
@@ -425,7 +495,10 @@ miles@miles-macbook:~$ cd eg_project</code></pre>
 <li>Seen wildcards in action.</li>
 <li>Learned a handful of shell commands.</li>
 </ul>
-<p>This is but a tiny fraction of what is available using the shell. The main objective here was to communicate some ideas that come in handy with git. You might like to see: <a href="http://swcarpentry.github.io/shell-novice/" class="uri">http://swcarpentry.github.io/shell-novice/</a> for a more complete introduction.`</p>
+<p>This is but a tiny fraction of what is available using the shell. The main
+objective here was to communicate some ideas that come in handy with git. You
+might like to see: <a href="http://swcarpentry.github.io/shell-novice/" class="uri">http://swcarpentry.github.io/shell-novice/</a> for a more
+complete introduction.`</p>
 
 </div>
 </div>
@@ -455,7 +528,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -465,6 +538,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Git for Scientists</title>
+  <title>8 Getting out of trouble | Git for Scientists</title>
   <meta name="description" content="A short course to get researchers up and running with git/GitHub">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Git for Scientists" />
+  <meta property="og:title" content="8 Getting out of trouble | Git for Scientists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Git for Scientists" />
+  <meta name="twitter:title" content="8 Getting out of trouble | Git for Scientists" />
   
   <meta name="twitter:description" content="A short course to get researchers up and running with git/GitHub" />
   
@@ -35,6 +35,7 @@
 <link rel="next" href="learning-more.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -167,6 +168,7 @@
 <li class="chapter" data-level="7.5.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#add-local-commits"><i class="fa fa-check"></i><b>7.5.2</b> Add local commits</a></li>
 <li class="chapter" data-level="7.5.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#fixing-merge-conflicts"><i class="fa fa-check"></i><b>7.5.3</b> Fixing merge conflicts</a></li>
 <li class="chapter" data-level="7.5.4" data-path="distributed-workflow.html"><a href="distributed-workflow.html#merging-without-atom-fanciness"><i class="fa fa-check"></i><b>7.5.4</b> Merging without Atom fanciness</a></li>
+<li class="chapter" data-level="7.5.5" data-path="distributed-workflow.html"><a href="distributed-workflow.html#on-automatic-merging"><i class="fa fa-check"></i><b>7.5.5</b> On Automatic Merging</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="distributed-workflow.html"><a href="distributed-workflow.html#using-merge-tools"><i class="fa fa-check"></i><b>7.6</b> Using merge tools</a></li>
 <li class="chapter" data-level="7.7" data-path="distributed-workflow.html"><a href="distributed-workflow.html#summary-3"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
@@ -209,7 +211,8 @@
             <section class="normal" id="section-">
 <div id="getting-out-of-trouble" class="section level1">
 <h1><span class="header-section-number">8</span> Getting out of trouble</h1>
-<p><strong>Teaching</strong>: 15 min <strong>Exercises</strong>: 10 min</p>
+<p><strong>Teaching</strong>: 15 min
+<strong>Exercises</strong>: 10 min</p>
 <div id="questions-6" class="section level2">
 <h2><span class="header-section-number">8.1</span> Questions</h2>
 <ul>
@@ -230,12 +233,19 @@
 <ul>
 <li><code>checkout</code> which will allow us to restore files to previous versions.</li>
 </ul>
-<p>There are other great resources on this topic, see: * <a href="https://ohshitgit.com/">OhShitGit</a> * <a href="http://inundata.org/lectures/git/#/">Getting Unstuck from Git</a></p>
+<p>There are other great resources on this topic, see:</p>
+<ul>
+<li><a href="https://ohshitgit.com/">OhShitGit</a></li>
+<li><a href="http://inundata.org/lectures/git/#/">Getting Unstuck from Git</a></li>
+</ul>
 </div>
 <div id="fixing-a-previous-commit" class="section level2">
 <h2><span class="header-section-number">8.4</span> Fixing a previous commit</h2>
-<p>In this scenario you’ve made a commit and then you realise you missed a file or made an error with the commit message.</p>
-<p>You an call the <code>git commit</code> command with the <code>--ammend</code> flag and any staged files will be added to the previous commit and you will be given a chance to rewrite the commit message.</p>
+<p>In this scenario you’ve made a commit and then you realise you missed a file or
+made an error with the commit message.</p>
+<p>You an call the <code>git commit</code> command with the <code>--amend</code> flag and any staged
+files will be added to the previous commit and you will be given a chance to
+rewrite the commit message.</p>
 <div id="your-first-amendment" class="section level3 exercise">
 <h3><span class="header-section-number">8.4.1</span> Your first amendment</h3>
 <p>Using the ‘git_workshop’ repository from previous lessons:</p>
@@ -244,7 +254,7 @@
 <li>On the terminal, Save, stage, and commit the file with commit messge “added part one”</li>
 <li>In Atom, add a new line in 00_analysis.Rmd: “part two”</li>
 <li>Save and stage the file.</li>
-<li>Ammend the commit as described above.</li>
+<li>Amend the commit as described above.</li>
 <li>Push the commit.</li>
 <li>Check the history on GitHub and confirm “part one” and “part two” were added as part of the same commit.</li>
 </ol>
@@ -252,60 +262,83 @@
 </div>
 <div id="restoring-a-file-to-an-earlier-version" class="section level2">
 <h2><span class="header-section-number">8.5</span> Restoring a file to an earlier version</h2>
-<p>Let’s say you’ve identified a problem with a specific file and would like to restore it to an earlier version. You have two options:</p>
+<p>Let’s say you’ve identified a problem with a specific file and would like to
+restore it to an earlier version. You have two options:</p>
 <ol style="list-style-type: decimal">
-<li>You can look through the history, say on GitHub, and find the hash of a commit from when things were fine. You restore the file to the version it was when that commit was made.</li>
-<li>You can’t find a commit or oh god please there’s not much time. You can restore the file to the version it was some time ago</li>
+<li>You can look through the history, say on GitHub, and find the hash of a
+commit from when things were fine. You restore the file to the version it was
+when that commit was made.</li>
+<li>You can’t find a commit or oh god please there’s not much time. You can
+restore the file to the version it was some time ago</li>
 </ol>
-<p>After you have restored the file, you can stage, commit, and push it to make it the current version.</p>
+<p>After you have restored the file, you can stage, commit, and push it to make it
+the current version.</p>
 <div id="restoring-to-a-hash" class="section level3">
 <h3><span class="header-section-number">8.5.1</span> Restoring to a hash</h3>
-<p>You don’t need the complete hash, just enough letters to ensure a unique match. 6 or so will usually do. The format of the command is</p>
+<p>You don’t need the complete hash, just enough letters to ensure a unique match.
+6 or so will usually do. The format of the command is</p>
 <pre><code>$ git checkout &lt;patial hash&gt; &lt;file path&gt;</code></pre>
-<p>The hashes in your repository are unique so I can’t give an example that will work for you. But this would restore <code>00_analysis.Rmd</code> to its a blank state in my repository:</p>
+<p>The hashes in your repository are unique so I can’t give an example that will
+work for you. But this would restore <code>00_analysis.Rmd</code> to its a blank
+state in my repository:</p>
 <pre><code>$ git checkout 3ff91b 00_analysis.Rmd</code></pre>
 </div>
 <div id="restoring-to-a-time-period-ago" class="section level3">
 <h3><span class="header-section-number">8.5.2</span> Restoring to a time period ago</h3>
-<p>Let’s say it’s Monday morning and you realise you made some bad changes to a file on Friday afternoon, but you’re not sure when, and you just need to fix it in a hurry before your meeting with your supervisor. You could do:</p>
+<p>Let’s say it’s Monday morning and you realise you made some bad changes to a
+file on Friday afternoon, but you’re not sure when, and you just need to fix it in
+a hurry before your meeting with your supervisor. You could do:</p>
 <pre><code>$ git checkout &quot;@{3 days ago}&quot; &lt;file path&gt;</code></pre>
-<p>To restore the file to as it was on Friday morning. You can use decimal numbers and any time unit. <code>@{20 minutes ago}</code> might be good for those last minute presentation ‘tweaks’.</p>
+<p>To restore the file to as it was on Friday morning. You can use decimal numbers
+and any time unit. <code>@{20 minutes ago}</code> might be good for those last minute
+presentation ‘tweaks’.</p>
 </div>
 <div id="restoring-to-most-recent-version" class="section level3">
 <h3><span class="header-section-number">8.5.3</span> Restoring to most recent version</h3>
-<p>If you decide you would like to return a file you restored with <code>checkout</code> to it’s most recent version, remember that HEAD is a reference to the latest commit. So you can again use <code>checkout</code>:</p>
+<p>If you decide you would like to return a file you restored with <code>checkout</code> to
+it’s most recent version, remember that HEAD is a reference to the latest
+commit. So you can again use <code>checkout</code>:</p>
 <pre><code>$ git checkout HEAD &lt;file path&gt;</code></pre>
 </div>
 <div id="restoration-resuce" class="section level3 exercise">
 <h3><span class="header-section-number">8.5.4</span> Restoration resuce</h3>
 <p>Using the ‘git_workshop’ repository:</p>
 <ol style="list-style-type: decimal">
-<li>Using <code>git checkout</code>, Restore ‘analysis.Rmd’ to the working directory. This is what ‘00_analysis.Rmd’ was called before we changed its name.</li>
+<li>Using <code>git checkout</code>, Restore ‘analysis.Rmd’ to the working directory. This
+is what ‘00_analysis.Rmd’ was called before we changed its name.</li>
 </ol>
 </div>
 </div>
 <div id="restoring-the-entire-repository-to-an-earlier-version" class="section level2">
 <h2><span class="header-section-number">8.6</span> Restoring the entire repository to an earlier version</h2>
-<p>You have a few options here depending on the outcome you want. Here I assume you want to temporarily roll back to check an analysis result with an old version, but you do not want to permanently reset the repository and its history to an earlier time point.</p>
-<p>If you call <code>git checkout</code> with no <code>&lt;file path&gt;</code> argument the entire repository will be rolled back to the commit hash or time you specified. For example:</p>
+<p>You have a few options here depending on the outcome you want. Here I assume you want
+to temporarily roll back to check an analysis result with an old version, but you do not
+want to permanently reset the repository and its history to an earlier time point.</p>
+<p>If you call <code>git checkout</code> with no <code>&lt;file path&gt;</code> argument the entire repository will
+be rolled back to the commit hash or time you specified. For example:</p>
 <pre><code>git checkout &quot;@{1 day ago}&quot;</code></pre>
-<p><strong>However be warned</strong> if you make commits in this state, they will work but they will not be added to the history - You can’t just insert stuff into the middle of history(!). You can add these orphan commits to a branch, but this is beyond the scope of this lesson.</p>
-<p>This state of git purgatory is called ‘detached HEAD’ as the head reference no longer points to a commit on the branch’s timeline.</p>
-<p>As before, you can return the entire repository to the present with:</p>
-<pre><code>git checkout HEAD</code></pre>
-<p>Permanently resetting the repository and its history to an earlier time point is possible but can lead to permanent loss of work. You will need to look into advanced usage of <code>git reset --hard</code>.</p>
+<p><strong>However be warned</strong> if you make commits in this state, they will work but they
+will not be added to the history - You can’t just insert stuff into the middle
+of history(!). You can add these orphan commits to a branch, but this is
+beyond the scope of this lesson.</p>
+<p>This state of git purgatory is called ‘detached HEAD’ as the head reference no
+longer points to a commit on the branch’s timeline.</p>
+<p>We can’t use <code>git checkout HEAD</code> as before to return to present because HEAD is no longer on any timeline. So we need to put HEAD back on a timeline using:</p>
+<pre><code>git checkout master</code></pre>
+<p>Where HEAD will be pointing to the latest commit by default.</p>
+<p>Permanently resetting the repository and its history to an earlier time point is
+possible but can lead to permanent loss of work. You will need to look into
+advanced usage of <code>git reset --hard</code>.</p>
 </div>
 <div id="when-all-else-fails" class="section level2">
 <h2><span class="header-section-number">8.7</span> When all else fails</h2>
-<div class="figure">
-<img src="https://imgs.xkcd.com/comics/git.png" />
-
-</div>
+<p><img src="https://imgs.xkcd.com/comics/git.png" /></p>
 <p>This is also called ‘burning it down’.</p>
 </div>
 <div id="summary-4" class="section level2">
 <h2><span class="header-section-number">8.8</span> Summary</h2>
-<p>You learned git commands that are useful for updating commits, restoring files, and jumping back to previous repository versions.</p>
+<p>You learned git commands that are useful for updating commits, restoring files,
+and jumping back to previous repository versions.</p>
 <ul>
 <li>git commit –amend</li>
 <li>git checkout 123abc file.ext</li>
@@ -341,7 +374,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -351,6 +384,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

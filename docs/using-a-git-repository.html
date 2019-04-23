@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Git for Scientists</title>
+  <title>6 Using a git repository | Git for Scientists</title>
   <meta name="description" content="A short course to get researchers up and running with git/GitHub">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Git for Scientists" />
+  <meta property="og:title" content="6 Using a git repository | Git for Scientists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Git for Scientists" />
+  <meta name="twitter:title" content="6 Using a git repository | Git for Scientists" />
   
   <meta name="twitter:description" content="A short course to get researchers up and running with git/GitHub" />
   
@@ -35,6 +35,7 @@
 <link rel="next" href="distributed-workflow.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -167,6 +168,7 @@
 <li class="chapter" data-level="7.5.2" data-path="distributed-workflow.html"><a href="distributed-workflow.html#add-local-commits"><i class="fa fa-check"></i><b>7.5.2</b> Add local commits</a></li>
 <li class="chapter" data-level="7.5.3" data-path="distributed-workflow.html"><a href="distributed-workflow.html#fixing-merge-conflicts"><i class="fa fa-check"></i><b>7.5.3</b> Fixing merge conflicts</a></li>
 <li class="chapter" data-level="7.5.4" data-path="distributed-workflow.html"><a href="distributed-workflow.html#merging-without-atom-fanciness"><i class="fa fa-check"></i><b>7.5.4</b> Merging without Atom fanciness</a></li>
+<li class="chapter" data-level="7.5.5" data-path="distributed-workflow.html"><a href="distributed-workflow.html#on-automatic-merging"><i class="fa fa-check"></i><b>7.5.5</b> On Automatic Merging</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="distributed-workflow.html"><a href="distributed-workflow.html#using-merge-tools"><i class="fa fa-check"></i><b>7.6</b> Using merge tools</a></li>
 <li class="chapter" data-level="7.7" data-path="distributed-workflow.html"><a href="distributed-workflow.html#summary-3"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
@@ -209,7 +211,8 @@
             <section class="normal" id="section-">
 <div id="using-a-git-repository" class="section level1">
 <h1><span class="header-section-number">6</span> Using a git repository</h1>
-<p><strong>Teaching</strong>: 40 min <strong>Exercises</strong>: 20 min</p>
+<p><strong>Teaching</strong>: 40 min
+<strong>Exercises</strong>: 20 min</p>
 <div id="questions-4" class="section level2">
 <h2><span class="header-section-number">6.1</span> Questions</h2>
 <ul>
@@ -245,36 +248,59 @@ $ git config --global user.name &quot;Firstname Lastname&quot;</code></pre>
 </div>
 <div id="configure-your-text-editor" class="section level3 exercises">
 <h3><span class="header-section-number">6.3.2</span> Configure your text editor</h3>
-<p>The text editor you configure here is the one git will open so you can write messages that explain your changes. Ideally it is an editor that opens really fast or one you always have open.</p>
+<p>The text editor you configure here is the one git will open so you can write
+messages that explain your changes. Ideally it is an editor that
+opens really fast or one you always have open.</p>
 <div id="set-up-atom" class="section level4 exercise">
 <h4><span class="header-section-number">6.3.2.1</span> Set up Atom</h4>
-<p>The default editor, Vim, is often found to be difficult to use by beginners and is the subject of <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">numerous memes</a>. In this course we will use Atom, which we will have open most of the time. You can change this at a later stage.</p>
+<p>The default editor, Vim, is often found to be difficult to use by beginners and is
+the subject of <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">numerous memes</a>. In this course we will use Atom, which we
+will have open most of the time. You can change this at a later stage.</p>
 <p>Configure it like so:</p>
 <pre><code>$ git config --global core.editor &quot;atom --wait&quot;</code></pre>
-<p>A list of configurations for other popular editors can be found <a href="http://swcarpentry.github.io/git-novice/02-setup/index.HTML">here</a>.</p>
+<p>A list of configurations for other popular editors can be found
+<a href="http://swcarpentry.github.io/git-novice/02-setup/index.HTML">here</a>.</p>
 </div>
 </div>
 </div>
 <div id="anatomy-of-git-cli-commands" class="section level2">
 <h2><span class="header-section-number">6.4</span> Anatomy of git cli commands</h2>
-<p>All git commands we will learn share elements with those you have just seen. They will all begin with <code>git</code> followed immediately by an argument that defines the type of command you would like git to perform. In the above example the command is <code>config</code>. Flags, both <code>-</code> and <code>--</code> types are used to alter the way the command is performed. Finally there are additional arguments that are required to perform the command.</p>
-<p>In the example above the first argument is the configuration key, and the second argument is the value it should take. The <code>--global</code> flag makes the configuration global, so it will apply to all repositories. Without <code>--global</code> the configuration applies to only the repository in the current working directory (In our case there is no such repository).</p>
+<p>All git commands we will learn share elements with those you have just seen.
+They will all begin with <code>git</code> followed immediately by an argument that defines
+the type of command you would like git to perform. In the above example the
+command is <code>config</code>. Flags, both <code>-</code> and <code>--</code> types are used to alter the way
+the command is performed. Finally there are additional arguments that are
+required to perform the command.</p>
+<p>In the example above the first argument is the configuration key, and the second
+argument is the value it should take. The <code>--global</code> flag makes the
+configuration global, so it will apply to all repositories. Without <code>--global</code>
+the configuration applies to only the repository in the current working
+directory (In our case there is no such repository).</p>
 <p>In summary, the form is:</p>
 <pre><code>$ git &lt;command&gt; &lt;command flags&gt; &lt;command arguments&gt;</code></pre>
 <div id="how-to-git-help" class="section level3">
 <h3><span class="header-section-number">6.4.1</span> How to git help</h3>
-<p>Like other cli programs we’ve seen we can get help with <code>--help</code>. This can be done in the context of git the program or a single command i.e.:</p>
+<p>Like other cli programs we’ve seen we can get help with <code>--help</code>. This can be
+done in the context of git the program or a single command i.e.:</p>
 <pre><code>$ git --help
 $ git config --help</code></pre>
-<p>Help for a specific command will open up a help browser in the terminal, you can scroll with the arrow keys or by paging, and quit with ‘q’.</p>
+<p>Help for a specific command will open up a help browser in the terminal, you can
+scroll with the arrow keys or by paging, and quit with ‘q’.</p>
 </div>
 </div>
 <div id="cloning-a-repository" class="section level2">
 <h2><span class="header-section-number">6.5</span> Cloning a repository</h2>
-<p>Cloning is the process of creating a local copy of a remote repository, like one hosted on GitHub. Before we clone a repository, think about where you will clone it to. You might like to create yourself a <code>repos</code> folder in your home folder.</p>
+<p>Cloning is the process of creating a local copy of a remote repository, like one
+hosted on GitHub. Before we clone a repository, think about where you will
+clone it to. You might like to create yourself a <code>repos</code> folder in your home
+folder.</p>
 <p>To clone a repository use the <code>clone</code> command followed by 2 arguments:</p>
 <pre><code>$ git clone &lt;repository URL&gt; &lt;parent folder&gt;</code></pre>
-<p>The parent folder is the folder that will contain your repository contents. The folder must be empty or the command will abort. If you leave the parent folder blank, the default behaviour is to create a folder for the repository in the current working directory with the same name as the repository. This is helpful and common usage.</p>
+<p>The parent folder is the folder that will contain your repository contents. The
+folder must be empty or the command will abort. If you leave the parent folder
+blank, the default behaviour is to create a folder for the repository in the
+current working directory with the same name as the repository. This is helpful
+and common usage.</p>
 <div id="create-a-repos-folder-optional" class="section level3 exercise">
 <h3><span class="header-section-number">6.5.1</span> Create a repos folder (optional)</h3>
 <ol style="list-style-type: decimal">
@@ -292,7 +318,10 @@ $ git config --help</code></pre>
 <p>In your terminal:</p>
 <ol style="list-style-type: decimal">
 <li>Change to the folder that will house your repositories with <code>cd</code>.</li>
-<li>Use this command to clone your repository, with your URL pasted in for ‘<URL>’: <code>$ git clone &lt;URL&gt;</code></li>
+<li>Use this command to clone your repository, with your URL pasted in for ‘<URL>’:</li>
+</ol>
+<pre><code>$ git clone &lt;URL&gt;</code></pre>
+<ol style="list-style-type: decimal">
 <li>Enter your GitHub password when prompted and press enter.</li>
 </ol>
 <p>Here is some sample output:</p>
@@ -305,8 +334,12 @@ Unpacking objects: 100% (3/3), done.</code></pre>
 </div>
 <div id="what-makes-a-git-repository" class="section level3">
 <h3><span class="header-section-number">6.5.3</span> What makes a git repository?</h3>
-<p>If you <code>cd</code> into your repository folder and run the <code>ls -a</code> command you will see a hidden folder called ‘.git’. Have a look at its contents if you like. This is where git stores all the metadata it needs to operate your repository, including the complete history of every file ever added.</p>
-<p>Be careful not to delete or rename the ‘.git’ folder or your repository will no longer work with git.</p>
+<p>If you <code>cd</code> into your repository folder and run the <code>ls -a</code> command you will see
+a hidden folder called ‘.git’. Have a look at its contents if you like. This is
+where git stores all the metadata it needs to operate your repository, including
+the complete history of every file ever added.</p>
+<p>Be careful not to delete or rename the ‘.git’ folder or your repository will no
+longer work with git.</p>
 </div>
 </div>
 <div id="local-repository-workflow" class="section level2">
@@ -319,15 +352,30 @@ Unpacking objects: 100% (3/3), done.</code></pre>
 <li>Push commits to the upstream remote.</li>
 </ol>
 <p>There’s a bit of specific terminology here we can break down:</p>
-<p>You make changes to files in the repository as you normally would with any file on your computer. Those changes are saved on your computer but they are not recorded in your repository until they are <strong>committed</strong>. A <strong>commit</strong> is a record of related (usually) changes with associated metadata about like author, time, date, and reason for change.</p>
-<p>A commit is not a snapshot. It is a delta. Only what changed is recorded. Therefore a single commit is not enough to recover a repository. You need all commits in order. You can think of a repository as a timeline of commits. This timeline is commonly referred to as the <strong>history</strong>.</p>
-<p>The <strong>staging area</strong> is a conceptual area where you can place changes you plan to commit imminently. You might have made many changes for varying reasons, so it makes sense to group them into commits related to the reason. You place files to be committed together in the staging area which feeds into your next commit.</p>
-<p>As you make commits, your local repository moves ahead of the remote repository (GitHub). You <strong>push</strong> your new commits to the remote to bring its history up to the present state of your local repository.</p>
+<p>You make changes to files in the repository as you normally would with any file
+on your computer. Those changes are saved on your computer but they are not
+recorded in your repository until they are <strong>committed</strong>. A <strong>commit</strong> is a
+record of related (usually) changes with associated metadata about like author,
+time, date, and reason for change.</p>
+<p>A commit is not a snapshot. It is a delta. Only what changed is recorded.
+Therefore a single commit is not enough to recover a repository. You need all
+commits in order. You can think of a repository as a timeline of commits. This
+timeline is commonly referred to as the <strong>history</strong>.</p>
+<p>The <strong>staging area</strong> is a conceptual area where you can place changes you plan
+to commit imminently. You might have made many changes for varying reasons, so
+it makes sense to group them into commits related to the reason. You place files
+to be committed together in the staging area which feeds into your next commit.</p>
+<p>As you make commits, your local repository moves ahead of the remote repository
+(GitHub). You <strong>push</strong> your new commits to the remote to bring its history up to the
+present state of your local repository.</p>
 </div>
 <div id="status---determining-when-things-have-changed" class="section level2">
 <h2><span class="header-section-number">6.7</span> Status - determining when things have changed</h2>
-<p>The <code>status</code> command gives us useful information about the status of our work relative to the local repository history and remote repository.</p>
-<p>It can be run with no additional arguments or flags. It will search upward from the current working directory until it finds a git repository or fails. If we run it from within our freshly cloned repository we get:</p>
+<p>The <code>status</code> command gives us useful information about the status of our work
+relative to the local repository history and remote repository.</p>
+<p>It can be run with no additional arguments or flags, and it will work from
+within working directory that is a sub-folder of a git repository. If we run it
+from within our freshly cloned repository we get:</p>
 <pre><code>$ git status
 On branch master
 Your branch is up-to-date with &#39;origin/master&#39;.
@@ -336,26 +384,28 @@ nothing to commit, working tree clean</code></pre>
 <ul>
 <li>our local branch</li>
 <li>our repository status with respect to our remote branch history</li>
-<li>if we have uncommitted changes in the repository file structure (the <strong>working tree</strong>).</li>
+<li>if we have uncommitted changes in the repository file structure (the
+<strong>working tree</strong>).</li>
 </ul>
 <div id="aside-branches" class="section level3">
 <h3><span class="header-section-number">6.7.1</span> Aside: branches</h3>
-<p>You can think of branches as parallel timelines in your repository history. Branches become necessary as the size of the team and project grows. For this lesson all you need to know is that when you create and clone a repository from GitHub its history contains only one timeline: a <strong>branch</strong> called <strong>master</strong>.</p>
+<p>You can think of branches as parallel timelines in your repository history.
+Branches become necessary as the size of the team and project grows. For this
+lesson all you need to know is that when you create and clone a repository from
+GitHub its history contains only one timeline: a <strong>branch</strong> called <strong>master</strong>.</p>
 </div>
 <div id="introducing-changes" class="section level3">
 <h3><span class="header-section-number">6.7.2</span> Introducing changes</h3>
-<p>Now we’ll introduce some changes and see how the status changes. Let’s do the following:</p>
+<p>Now we’ll introduce some changes and see how the status changes. Let’s do the
+following:</p>
 <ol style="list-style-type: decimal">
 <li>Create a new folder called ‘data’ in our repository with <code>mkdir</code></li>
 <li>Create a new file in the repository called ‘analysis.Rmd’ with Atom</li>
 <li>Create a new file in the repository called ‘data.csv’ with Atom.</li>
-<li>Add the following text on a new line in README.md: “Just gitting started!”</li>
+<li>Change the first line of text under the header in README.md to: “Just gitting started!”</li>
 </ol>
 <p>This is what Atom should look like when we’re done:</p>
-<div class="figure">
-<img src="figs/atom_changes.png" />
-
-</div>
+<p><img src="figs/atom_changes.png" /></p>
 <p>Running <code>git status</code> again should produce different output along the lines of:</p>
 <pre><code>$ git status
 On branch master
@@ -375,7 +425,8 @@ Untracked files:
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>Some things of note:</p>
 <ul>
-<li>Our master branch is still up-to-date with the remote repository branch ‘origin/maser’ - no commits have been made.</li>
+<li>Our master branch is still up-to-date with the remote repository branch
+‘origin/maser’ - no commits have been made.</li>
 <li>git is suggesting commands we could use from here: <code>add</code>, <code>checkout</code>, and <code>commit</code>.</li>
 <li>git has detected README.md was modified.</li>
 <li>git has detected a new untracked files: analysis.Rmd, data.csv.</li>
@@ -385,7 +436,10 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 </div>
 <div id="diff---seeing-whats-changed" class="section level2">
 <h2><span class="header-section-number">6.8</span> Diff - seeing what’s changed</h2>
-<p>We can ask git to show us exactly what has changed in any file or all files using the <code>git diff</code> command. It will compare <strong>differences</strong> in files with the last committed versions. Colour coded output describing differences appears in the terminal.</p>
+<p>We can ask git to show us exactly what has changed in any file or all files
+using the <code>git diff</code> command. It will compare <strong>differences</strong> in files with the last
+committed versions. Colour coded output describing differences appears in the
+terminal.</p>
 <p>The syntax is:</p>
 <pre><code>git diff &lt;path&gt; &lt;flags&gt;</code></pre>
 <p>If <code>&lt;path&gt;</code> is omitted all files are ‘diffed’ (this is the lingo). A useful flag is <code>--colour-words</code> which will show individual word changes in context, rather than changed lines (the default).</p>
@@ -394,37 +448,56 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 </div>
 <div id="add---moving-changes-to-staging" class="section level2">
 <h2><span class="header-section-number">6.9</span> Add - moving changes to staging</h2>
-<p>The <code>add</code> command moves changed files to the staging area in preparation for a commit. The syntax is:</p>
+<p>The <code>add</code> command moves changed files to the staging area in preparation for a
+commit. The syntax is:</p>
 <pre><code>$ git add &lt;pathspec&gt;</code></pre>
-<p>Where the <code>&lt;pathspec&gt;</code> argument is a path to file or folder. In the case of a folder, all files in the folder will be added to staging. Paths can be formed using wildcards, <code>*</code>, and short-hands e.g. <code>.</code> - This comes in quite handy for staging groups of files.</p>
-<p><code>add</code> can be used to add stage an existing (tracked) file the repository knows about or an entirely new file (untracked) like ‘analysis.Rmd’ in the previous section. The syntax is the same.</p>
+<p>Where the <code>&lt;pathspec&gt;</code> argument is a path to file or folder. In the case of a
+folder, all files in the folder will be added to staging. Paths can be formed
+using wildcards, <code>*</code>, and short-hands e.g. <code>.</code> - This comes in quite handy for
+staging groups of files.</p>
+<p><code>add</code> can be used to add stage an existing (tracked) file the repository knows about or an
+entirely new file (untracked) like ‘analysis.Rmd’ in the previous section. The syntax is the
+same.</p>
 <div id="stage-all-files-in-a-single-command" class="section level3 exercise">
 <h3><span class="header-section-number">6.9.1</span> Stage all files in a single command</h3>
 <ol style="list-style-type: decimal">
 <li>Using a single <code>git add</code> command to stage ‘analysis.Rmd’, ‘README.md’, and ‘data.csv’.</li>
 </ol>
-<p><em>Hint:</em> <code>git add --help</code> might have something useful to say regarding the <code>&lt;pathspec&gt;</code> argument.</p>
+<p><em>Hint:</em> <code>git add --help</code> might have something useful to say regarding the
+<code>&lt;pathspec&gt;</code> argument.</p>
 </div>
 <div id="types-of-files-to-stage" class="section level3">
 <h3><span class="header-section-number">6.9.2</span> Types of files to stage</h3>
 <p>There are some considerations when staging files:</p>
 <ul>
-<li>Once a file is committed it is hard to remove from the history.</li>
+<li>Once a file is committed it is hard to remove from the history.
+<ul>
 <li>Beware committing sensitive information like security tokens.</li>
-<li>Git works best with files that are ‘human readable’, i.e. source files.</li>
+</ul></li>
+<li>Git works best with files that are ‘human readable’, i.e. source files.
+<ul>
 <li>binary files or media files cannot be ‘diffed’ to work out delta.</li>
+</ul></li>
 <li>GitHub has individual file size limit of 100 MB</li>
 </ul>
 </div>
 </div>
 <div id="reset---unstaging-changes" class="section level2">
 <h2><span class="header-section-number">6.10</span> Reset - unstaging changes</h2>
-<p>Git <code>reset</code> is a powerful command that is used in the context of undoing things we have done locally before pushing. It can reset the staging area and also reset where we are on our history timeline to a point in the past, allowing history to be rewritten.</p>
-<p>Time travelling and changing history is generally a bad idea and in the worst case <a href="https://www.imdb.com/title/tt0096874/quotes/qt0426656">can lead to a time paradox, the result of which could cause a chain reaction that would unravel the very fabric of the space-time continuum and destroy the entire universe!</a></p>
+<p>Git <code>reset</code> is a powerful command that is used in the context of undoing things
+we have done locally before pushing. It can reset the staging area and also
+reset where we are on our history timeline to a point in the past, allowing
+history to be rewritten.</p>
+<p>Time travelling and changing history is generally a bad idea and in the worst
+case <a href="https://www.imdb.com/title/tt0096874/quotes/qt0426656">can lead to a time paradox, the result of which could cause a chain reaction
+that would unravel the very fabric of the space-time continuum and destroy the
+entire universe!</a></p>
 <p>We will just consider the basic usage for resetting staging in this section. The syntax is:</p>
 <pre><code>$ git reset &lt;path&gt;</code></pre>
 <ul>
-<li>Beware committing sensitive information like security tokens. To unstage files or folders on the path specified by the <code>&lt;path&gt;</code> argument. Unstaging everything at once is also an option by omitting <code>&lt;path&gt;</code>:</li>
+<li>Beware committing sensitive information like security tokens.
+To unstage files or folders on the path specified by the <code>&lt;path&gt;</code> argument.
+Unstaging everything at once is also an option by omitting <code>&lt;path&gt;</code>:</li>
 </ul>
 <pre><code>$ git reset</code></pre>
 <div id="born-for-the-stage" class="section level3 exercise">
@@ -438,15 +511,23 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 </div>
 <div id="caution-hard" class="section level3">
 <h3><span class="header-section-number">6.10.2</span> Caution: –hard</h3>
-<p>It is likely in your travels with git that you will be at some stage advised to do <code>git reset --hard</code> to resolve a problem. The <code>--hard</code> flag will result in all changes being unstaged <strong>and additionally all tracked files being reset to their last committed state</strong>. Clearly there is a risk of work loss. Make sure you don’t want to keep anything before you do this!</p>
+<p>It is likely in your travels with git that you will be at some stage advised to
+do <code>git reset --hard</code> to resolve a problem. The <code>--hard</code> flag will result in all
+changes being unstaged <strong>and additionally all tracked files being reset to their
+last committed state</strong>. Clearly there is a risk of work loss. Make sure you
+don’t want to keep anything before you do this!</p>
 </div>
 </div>
 <div id="commit---recording-staged-changes" class="section level2">
 <h2><span class="header-section-number">6.11</span> Commit - recording staged changes</h2>
-<p>Git <code>commit</code> is how you record staged changes in your history. The main activity involved in making a commit is writing the <strong>commit message</strong> which explains the changes.</p>
+<p>Git <code>commit</code> is how you record staged changes in your history. The main activity
+involved in making a commit is writing the <strong>commit message</strong> which explains the
+changes.</p>
 <p>The basic syntax is simple:</p>
 <pre><code>$ git commit</code></pre>
-<p>Like <code>add</code> you can run this with your working directory set to any child folder of a git repository. The command will trigger a new window to open in Atom with this text:</p>
+<p>Like <code>add</code> you can run this with your working directory set to any child folder
+of a git repository. The command will trigger a new window to open in Atom with
+this text:</p>
 <pre><code>
 # Please enter the commit message for your changes. Lines starting
 # with &#39;#&#39; will be ignored, and an empty message aborts the commit.
@@ -460,7 +541,10 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 #</code></pre>
 <div id="aborting-a-commit" class="section level3">
 <h3><span class="header-section-number">6.11.1</span> Aborting a commit</h3>
-<p>The information provided summarises the current branch and the changes to be committed. This is a good opportunity to sanity check this information before making history. If you spot something fishy, close the file without adding a message and the commit will be aborted.</p>
+<p>The information provided summarises the current branch and the changes to be
+committed. This is a good opportunity to sanity check this information before
+making history. If you spot something fishy, close the file without adding a
+message and the commit will be aborted.</p>
 </div>
 <div id="completing-a-commit" class="section level3">
 <h3><span class="header-section-number">6.11.2</span> Completing a commit</h3>
@@ -483,7 +567,10 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
  3 files changed, 2 insertions(+), 1 deletion(-)
  create mode 100644 analysis.Rmd
  create mode 100644 data/data.csv</code></pre>
-<p><code>[master c6766f1]</code> tells us a commit with a hash matching <code>c6766f1</code> was added to our master branch. Your hash will be different as they are intended to uniquely identify the commit. The hashes come in useful when we need to recover past versions.</p>
+<p><code>[master c6766f1]</code> tells us a commit with a hash matching <code>c6766f1</code> was added to
+our master branch. Your hash will be different as they are intended to uniquely
+identify the commit. The hashes come in useful when we need to recover past
+versions.</p>
 </div>
 <div id="common-usage-git-commit--m-message" class="section level3">
 <h3><span class="header-section-number">6.11.3</span> Common usage: git commit -m “message”</h3>
@@ -491,8 +578,10 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 <pre><code>$ git commit -m &quot;a short commit message&quot;</code></pre>
 <p>There are two drawbacks with this approach:</p>
 <ol style="list-style-type: decimal">
-<li>You do not get the final opportunity to see what is staged and what branch you are on which can be helpful in avoiding mistakes.</li>
-<li>You are discouraged from writing detailed commit messages since typing into the terminal on a single line is cumbersome.</li>
+<li>You do not get the final opportunity to see what is staged and what branch
+you are on which can be helpful in avoiding mistakes.</li>
+<li>You are discouraged from writing detailed commit messages since typing into
+the terminal on a single line is cumbersome.</li>
 </ol>
 <p>It can be faster though so it might be great for your pattern of use.</p>
 </div>
@@ -505,7 +594,9 @@ Your branch is ahead of &#39;origin/master&#39; by 1 commit.
   (use &quot;git push&quot; to publish your local commits)
 nothing to commit, working tree clean
 </code></pre>
-<p>As we add commits to our local repository it moves ahead of the remote repository. Git is suggesting that we probably want to push our commits to GitHub (‘origin/master’), and indeed that is the next step.</p>
+<p>As we add commits to our local repository it moves ahead of the remote
+repository. Git is suggesting that we probably want to push our commits to
+GitHub (‘origin/master’), and indeed that is the next step.</p>
 </div>
 </div>
 <div id="push---sending-commits-to-github" class="section level2">
@@ -513,9 +604,14 @@ nothing to commit, working tree clean
 <p>Most common usage of the push command is:</p>
 <pre><code>$ git push</code></pre>
 <p>With a working directory that is a child of a git repository.</p>
-<p>This will cause all our new local commits to be sent to all configured remote repositories. In the case of our repository, it came configured with a single remote, GitHub, when we cloned it.</p>
-<p>As we have discussed, git supports complex decentralised topologies including having multiple remotes. As an example it would be possible to push our commits to remote repositories hosted on GitHub and GitLab simultaneously.</p>
-<p>The <code>push</code> command has flags and arguments that support these kinds of scenarios but you will likely never use them.</p>
+<p>This will cause all our new local commits to be sent to all configured remote
+repositories. In the case of our repository, it came configured with a single
+remote, GitHub, when we cloned it.</p>
+<p>As we have discussed, git supports complex decentralised topologies including
+having multiple remotes. As an example it would be possible to push our commits
+to remote repositories hosted on GitHub and GitLab simultaneously.</p>
+<p>The <code>push</code> command has flags and arguments that support these kinds of scenarios
+but you will likely never use them.</p>
 <p>If we push our current commit we see:</p>
 <pre><code>$ git push 
 Counting objects: 5, done.
@@ -537,11 +633,14 @@ To https://www.github.com/milesmcbain/git_workshop.git
 <li>In your browser, navigate to your repository on GitHub.</li>
 </ol>
 <ul>
-<li>You can go straight to <code>https://www.github.com/YOURUSER/git_workshop</code>, replacing <code>YOURUSER</code> appropriately.</li>
+<li>You can go straight to <code>https://www.github.com/YOURUSER/git_workshop</code>,
+replacing <code>YOURUSER</code> appropriately.</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li>On your repository page, in the upper left of screen there is a circular arrow clock icon with a ‘commits’ label. Click it to see your repository history.</li>
-<li>In the history view, click the commit hash on the right of screen to see the delta for that commit</li>
+<li>On your repository page, in the upper left of screen there is a circular
+arrow clock icon with a ‘commits’ label. Click it to see your repository history.</li>
+<li>In the history view, click the commit hash on the right of screen to see the
+delta for that commit</li>
 </ol>
 </div>
 <div id="your-turn-renaming-a-file" class="section level3 exercise">
@@ -597,7 +696,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -607,6 +706,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
